@@ -1,0 +1,1720 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+public/
+  favicon.svg
+  icons.svg
+src/
+  assets/
+    hero.png
+    react.svg
+    vite.svg
+  components/
+    Footer.tsx
+    Modal.tsx
+    SessionButton.tsx
+    UI.tsx
+  context/
+    AppContext.tsx
+  data/
+    account.ts
+    products.ts
+  hooks/
+    useReveal.ts
+  styles/
+    global.css
+    tokens.css
+  types/
+    index.ts
+  utils/
+    icons.tsx
+  views/
+    Account.tsx
+    Home.tsx
+    ProductDetail.tsx
+  App.css
+  App.tsx
+  index.css
+  main.tsx
+  vite-env.d.ts
+.gitignore
+eslint.config.js
+index.html
+package.json
+README.md
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="public/favicon.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="46" fill="none" viewBox="0 0 48 46"><path fill="#863bff" d="M25.946 44.938c-.664.845-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.287c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.497 0-3.578-1.842-3.578H1.237c-.92 0-1.456-1.04-.92-1.788L10.013.474c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.579 1.842 3.579h11.377c.943 0 1.473 1.088.89 1.83L25.947 44.94z" style="fill:#863bff;fill:color(display-p3 .5252 .23 1);fill-opacity:1"/><mask id="a" width="48" height="46" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M25.842 44.938c-.664.844-2.021.375-2.021-.698V33.937a2.26 2.26 0 0 0-2.262-2.262H10.183c-.92 0-1.456-1.04-.92-1.788l7.48-10.471c1.07-1.498 0-3.579-1.842-3.579H1.133c-.92 0-1.456-1.04-.92-1.787L9.91.473c.214-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.471c-1.07 1.498 0 3.578 1.842 3.578h11.377c.943 0 1.473 1.088.89 1.832L25.843 44.94z" style="fill:#000;fill-opacity:1"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#ede6ff" rx="5.508" ry="14.704" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -4.47 31.516)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#ede6ff" rx="10.399" ry="29.851" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -39.328 7.883)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#7e14ff" rx="5.508" ry="30.487" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -25.913 -14.639)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.814 -32.644 -3.334)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#7e14ff" rx="5.508" ry="30.599" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="matrix(.00324 1 1 -.00324 -34.34 30.47)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#ede6ff" rx="14.072" ry="22.078" style="fill:#ede6ff;fill:color(display-p3 .9275 .9033 1);fill-opacity:1" transform="rotate(93.35 24.506 48.493)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#7e14ff" rx="3.47" ry="21.501" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(89.009 28.708 47.59)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx=".387" cy="8.972" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(39.51 .387 8.972)"/></g><g filter="url(#k)"><ellipse cx="47.523" cy="-6.092" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 47.523 -6.092)"/></g><g filter="url(#l)"><ellipse cx="41.412" cy="6.333" fill="#47bfff" rx="5.971" ry="9.665" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 41.412 6.333)"/></g><g filter="url(#m)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#n)"><ellipse cx="-1.879" cy="38.332" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 -1.88 38.332)"/></g><g filter="url(#o)"><ellipse cx="35.651" cy="29.907" fill="#7e14ff" rx="4.407" ry="29.108" style="fill:#7e14ff;fill:color(display-p3 .4922 .0767 1);fill-opacity:1" transform="rotate(37.892 35.651 29.907)"/></g><g filter="url(#p)"><ellipse cx="38.418" cy="32.4" fill="#47bfff" rx="5.971" ry="15.297" style="fill:#47bfff;fill:color(display-p3 .2799 .748 1);fill-opacity:1" transform="rotate(37.892 38.418 32.4)"/></g></g><defs><filter id="b" width="60.045" height="41.654" x="-19.77" y="16.149" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-54.613" y="-7.533" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-49.64" y="2.03" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-45.045" y="20.029" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-43.513" y="21.178" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="15.756" y="-17.901" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="23.548" y="2.284" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-27.636" y="-22.853" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="20.116" y="-38.415" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="24.641" y="-11.323" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-29.286" y="6.009" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="8.244" y="-2.416" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="18.713" y="10.588" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17158" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="public/icons.svg">
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="bluesky-icon" viewBox="0 0 16 17">
+    <g clip-path="url(#bluesky-clip)"><path fill="#08060d" d="M7.75 7.735c-.693-1.348-2.58-3.86-4.334-5.097-1.68-1.187-2.32-.981-2.74-.79C.188 2.065.1 2.812.1 3.251s.241 3.602.398 4.13c.52 1.744 2.367 2.333 4.07 2.145-2.495.37-4.71 1.278-1.805 4.512 3.196 3.309 4.38-.71 4.987-2.746.608 2.036 1.307 5.91 4.93 2.746 2.72-2.746.747-4.143-1.747-4.512 1.702.189 3.55-.4 4.07-2.145.156-.528.397-3.691.397-4.13s-.088-1.186-.575-1.406c-.42-.19-1.06-.395-2.741.79-1.755 1.24-3.64 3.752-4.334 5.099"/></g>
+    <defs><clipPath id="bluesky-clip"><path fill="#fff" d="M.1.85h15.3v15.3H.1z"/></clipPath></defs>
+  </symbol>
+  <symbol id="discord-icon" viewBox="0 0 20 19">
+    <path fill="#08060d" d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82"/>
+  </symbol>
+  <symbol id="documentation-icon" viewBox="0 0 21 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="m15.5 13.333 1.533 1.322c.645.555.967.833.967 1.178s-.322.623-.967 1.179L15.5 18.333m-3.333-5-1.534 1.322c-.644.555-.966.833-.966 1.178s.322.623.966 1.179l1.534 1.321"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M17.167 10.836v-4.32c0-1.41 0-2.117-.224-2.68-.359-.906-1.118-1.621-2.08-1.96-.599-.21-1.349-.21-2.848-.21-2.623 0-3.935 0-4.983.369-1.684.591-3.013 1.842-3.641 3.428C3 6.449 3 7.684 3 10.154v2.122c0 2.558 0 3.838.706 4.726q.306.383.713.671c.76.536 1.79.64 3.581.66"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M3 10a2.78 2.78 0 0 1 2.778-2.778c.555 0 1.209.097 1.748-.047.48-.129.854-.503.982-.982.145-.54.048-1.194.048-1.749a2.78 2.78 0 0 1 2.777-2.777"/>
+  </symbol>
+  <symbol id="github-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844" clip-rule="evenodd"/>
+  </symbol>
+  <symbol id="social-icon" viewBox="0 0 20 20">
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M12.5 6.667a4.167 4.167 0 1 0-8.334 0 4.167 4.167 0 0 0 8.334 0"/>
+    <path fill="none" stroke="#aa3bff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.35" d="M2.5 16.667a5.833 5.833 0 0 1 8.75-5.053m3.837.474.513 1.035c.07.144.257.282.414.309l.93.155c.596.1.736.536.307.965l-.723.73a.64.64 0 0 0-.152.531l.207.903c.164.715-.213.991-.84.618l-.872-.52a.63.63 0 0 0-.577 0l-.872.52c-.624.373-1.003.094-.84-.618l.207-.903a.64.64 0 0 0-.152-.532l-.723-.729c-.426-.43-.289-.864.306-.964l.93-.156a.64.64 0 0 0 .412-.31l.513-1.034c.28-.562.735-.562 1.012 0"/>
+  </symbol>
+  <symbol id="x-icon" viewBox="0 0 19 19">
+    <path fill="#08060d" fill-rule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clip-rule="evenodd"/>
+  </symbol>
+</svg>
+</file>
+
+<file path="src/assets/react.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="35.93" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228"><path fill="#00D8FF" d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"></path></svg>
+</file>
+
+<file path="src/assets/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
+</file>
+
+<file path="src/components/Footer.tsx">
+// src/components/Footer.tsx
+import React from 'react';
+import { Brand} from './UI';
+import { useAppContext } from '../context/AppContext';
+import { ic } from '../utils/icons';
+
+export const Footer = () => {
+  const { addToast } = useAppContext();
+  const handleProx = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addToast('Disponible próximamente en la versión completa', 'warn');
+  };
+
+  return (
+    <footer style={{ background: 'linear-gradient(to bottom, #1e2530, #171c25)', color: 'var(--cream)', paddingTop: 64, paddingBottom: 24, borderTop: '4px solid var(--accent)' }}>
+      <div className="container">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, marginBottom: 48 }}>
+          <div>
+            <Brand cream />
+            <p style={{ color: 'var(--mut)', fontSize: 14, marginTop: 16, marginBottom: 24 }}>La suite de software que opera tu negocio de punta a punta.</p>
+            <form onSubmit={e => { e.preventDefault(); addToast('¡Suscrito al newsletter!', 'success'); }} style={{ display: 'flex', gap: 8 }}>
+              <input type="email" required placeholder="Tu email" style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff', flex: 1 }} />
+              <button type="submit" style={{ background: 'var(--accent)', color: '#fff', padding: '8px 12px', borderRadius: 6, fontWeight: 600 }}>Suscribirme</button>
+            </form>
+          </div>
+          <div>
+            <h4 style={{ marginBottom: 16 }}>Productos</h4>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
+              <li><a href="#/producto/stockia">Stockia</a></li>
+              <li><a href="#/producto/citalis">Citalis</a></li>
+              <li><a href="#/producto/turnia">Turnia</a></li>
+              <li><a href="#/producto/mesa">Mesa</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style={{ marginBottom: 16 }}>Empresa</h4>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
+              <li><a href="#" onClick={handleProx}>Sobre nosotros</a></li>
+              <li><a href="#" onClick={handleProx}>Blog</a></li>
+              <li><a href="#" onClick={handleProx}>Trabaja con nosotros</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style={{ marginBottom: 16 }}>Contacto</h4>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
+              <li style={{ display: 'flex', gap: 8 }}>{ic('phone', 16)} +34 910 246 800</li>
+              <li style={{ display: 'flex', gap: 8 }}>{ic('info', 16)} hola@ahorratiempo.com</li>
+            </ul>
+          </div>
+        </div>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', color: 'var(--mut)', fontSize: 13 }}>
+          <span>© 2026 Ahorra-Tiempo S.L.</span>
+          <div style={{ display: 'flex', gap: 16 }}>
+            <a href="#" onClick={handleProx}>Privacidad</a>
+            <a href="#" onClick={handleProx}>Términos</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+</file>
+
+<file path="src/components/Modal.tsx">
+// src/components/Modal.tsx
+import React, { useEffect } from 'react';
+import { ic } from '../utils/icons';
+
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title: string;
+  children: React.ReactNode;
+}
+
+export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
+  useEffect(() => {
+    if (isOpen) {
+      const handler = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+      document.addEventListener('keydown', handler);
+      return () => document.removeEventListener('keydown', handler);
+    }
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, zIndex: 9000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,15,25,0.4)', backdropFilter: 'blur(8px)' }} onClick={onClose} />
+      <div style={{ position: 'relative', background: '#242b37', color: 'var(--cream)', width: '90%', maxWidth: 440, borderRadius: 22, padding: 32, boxShadow: '0 25px 50px rgba(0,0,0,0.3)', animation: 'scaleIn 0.25s cubic-bezier(0.16, 1, 0.3, 1)' }}>
+        <button onClick={onClose} style={{ position: 'absolute', top: 20, right: 20, color: 'var(--mut)' }}>{ic('x', 24)}</button>
+        <h3 style={{ fontSize: 24, marginBottom: 24 }}>{title}</h3>
+        {children}
+      </div>
+      <style>{`@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }`}</style>
+    </div>
+  );
+};
+</file>
+
+<file path="src/components/SessionButton.tsx">
+// src/components/SessionButton.tsx
+import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
+import { Button } from './UI';
+import { ic } from '../utils/icons';
+
+export const SessionButton = () => {
+  const { loggedIn, user, login } = useAppContext();
+  const navigate = useNavigate();
+
+  if (!loggedIn) {
+    return <Button variant="ghost-dark" onClick={login}>{ic('users', 18)} Iniciar sesión</Button>;
+  }
+
+  return (
+    <div onClick={() => navigate('/cuenta')} style={{ display: 'flex', alignItems: 'center', gap: 10, background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(10px)', padding: '6px 12px 6px 6px', borderRadius: 999, cursor: 'pointer', border: '1px solid rgba(255,255,255,0.2)', color: 'var(--cream)', transition: 'background 0.2s' }}>
+      <div style={{ background: 'var(--accent)', color: '#fff', width: 32, height: 32, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700 }}>
+        {user?.initials}
+      </div>
+      <span style={{ fontSize: 14, fontWeight: 500 }}>{user?.name.split(' ')[0]}</span>
+      <span style={{ opacity: 0.7 }}>{ic('chevD', 16)}</span>
+    </div>
+  );
+};
+</file>
+
+<file path="src/components/UI.tsx">
+// src/components/UI.tsx
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ic } from '../utils/icons';
+import { useAppContext } from '../context/AppContext';
+
+export const Brand = ({ cream = false }: { cream?: boolean }) => (
+  <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: cream ? 'var(--cream)' : 'var(--ink)', fontWeight: 600, fontSize: '19px', textShadow: cream ? '0 2px 4px rgba(0,0,0,0.1)' : 'none' }}>
+    Ahorra <span style={{ color: 'var(--accent)' }}>{ic('clock', 20)}</span> Tiempo
+  </Link>
+);
+
+export const Badge = ({ text, color }: { text: string; color: string }) => (
+  <div style={{ background: color, color: '#fff', width: 28, height: 28, borderRadius: 6, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700 }}>
+    {text}
+  </div>
+);
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'dark'|'cream'|'ghost-dark'|'glass'|'blue';
+  href?: string;
+  to?: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+
+export const Button = ({ variant = 'dark', href, to, children, style, ...props }: ButtonProps) => {
+  const baseStyle: React.CSSProperties = {
+    display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px',
+    borderRadius: '999px', fontSize: '15px', fontWeight: 600, transition: 'all 0.2s',
+    cursor: 'pointer', border: '1px solid transparent', textDecoration: 'none'
+  };
+  
+  let varStyle: React.CSSProperties = {};
+  if (variant === 'dark') varStyle = { background: 'var(--coal)', color: 'var(--cream)', boxShadow: '0 10px 20px rgba(0,0,0,0.15)' };
+  if (variant === 'cream') varStyle = { background: 'var(--cream)', color: 'var(--ink)', boxShadow: '0 10px 20px rgba(0,0,0,0.1)' };
+  if (variant === 'ghost-dark') varStyle = { background: 'rgba(20,30,40,0.4)', color: 'var(--cream)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.2)' };
+  if (variant === 'glass') varStyle = { background: 'rgba(255,255,255,0.5)', color: 'var(--ink)', border: '1px solid var(--glass-brd)' };
+  if (variant === 'blue') varStyle = { background: 'var(--accent)', color: '#fff' };
+
+  const merged = { ...baseStyle, ...varStyle, ...style };
+  
+  if (to) return <Link to={to} style={merged} {...(props as any)}>{children}</Link>;
+  if (href) return <a href={href} style={merged} {...(props as any)}>{children}</a>;
+  return <button style={merged} {...props}>{children}</button>;
+};
+
+export const ToastList = () => {
+  const { toasts } = useAppContext();
+  
+  return (
+    <div style={{ position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', flexDirection: 'column', gap: 8 }}>
+      {toasts.map(t => (
+        <div key={t.id} style={{ background: '#242b37', color: '#fff', padding: '12px 20px', borderRadius: 999, fontSize: 14, display: 'flex', alignItems: 'center', gap: 8, boxShadow: '0 10px 25px rgba(0,0,0,0.2)', animation: 'slideUp 0.3s ease-out' }}>
+          <span style={{ color: t.type === 'success' ? 'var(--ok)' : t.type === 'warn' ? '#fbbf24' : 'var(--accent)' }}>
+            {ic(t.type === 'success' ? 'check' : 'info', 18)}
+          </span>
+          {t.msg}
+        </div>
+      ))}
+      <style>{`@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }`}</style>
+    </div>
+  );
+};
+</file>
+
+<file path="src/context/AppContext.tsx">
+// src/context/AppContext.tsx
+import { createContext, useContext, useState, ReactNode } from 'react';
+import { userMock, subsMock, invoicesMock } from '../data/account';
+
+type ToastType = 'success' | 'warn' | 'info';
+interface ToastInfo { id: number; msg: string; type: ToastType; }
+
+interface AppContextType {
+  toasts: ToastInfo[];
+  addToast: (msg: string, type?: ToastType) => void;
+  removeToast: (id: number) => void;
+  loggedIn: boolean;
+  login: () => void;
+  logout: () => void;
+  user: typeof userMock | null;
+  subs: typeof subsMock;
+  invoices: typeof invoicesMock;
+}
+
+const AppContext = createContext<AppContextType | undefined>(undefined);
+
+let toastId = 0;
+
+export function AppProvider({ children }: { children: ReactNode }) {
+  const [toasts, setToasts] = useState<ToastInfo[]>([]);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const addToast = (msg: string, type: ToastType = 'info') => {
+    const id = ++toastId;
+    setToasts(prev => [...prev, { id, msg, type }]);
+    setTimeout(() => removeToast(id), 2800);
+  };
+
+  const removeToast = (id: number) => {
+    setToasts(prev => prev.filter(t => t.id !== id));
+  };
+
+  const login = () => {
+    setLoggedIn(true);
+    addToast('Sesión iniciada correctamente', 'success');
+  };
+  const logout = () => {
+    setLoggedIn(false);
+    addToast('Sesión cerrada. ¡Hasta pronto!', 'info');
+  };
+
+  return (
+    <AppContext.Provider value={{
+      toasts, addToast, removeToast,
+      loggedIn, login, logout,
+      user: loggedIn ? userMock : null,
+      subs: subsMock, invoices: invoicesMock
+    }}>
+      {children}
+    </AppContext.Provider>
+  );
+}
+
+export const useAppContext = () => {
+  const ctx = useContext(AppContext);
+  if (!ctx) throw new Error('useAppContext must be used within AppProvider');
+  return ctx;
+};
+</file>
+
+<file path="src/data/account.ts">
+// src/data/account.ts
+import { Sub, Invoice } from '../types';
+
+export const userMock = {
+  initials: 'MI',
+  name: 'Marta Iglesias',
+  email: 'marta@tiendasballester.com',
+  plan: 'Suite · Anual'
+};
+
+export const subsMock: Sub[] = [
+  { pid: 'stockia', plan: 'Plan anual', renewal: '12 jun 2026', sid: 'SUB-ST-2481', ver: '4.2.1', users: '12/25', upct: 48, uptime: '99.98 %', api: '48.2 k', backup: 'hace 2 h', since: '2023', monthly: 24 },
+  { pid: 'turnia', plan: 'Plan anual', renewal: '3 mar 2026', sid: 'SUB-RH-1047', ver: '3.9.0', users: '28/40', upct: 70, uptime: '99.99 %', api: '21.7 k', backup: 'hace 40 min', since: '2022', monthly: 29 },
+  { pid: 'mesa', plan: 'Plan mensual', renewal: '30 nov 2025', sid: 'SUB-RS-5533', ver: '5.0.3', users: '9/15', upct: 60, uptime: '99.95 %', api: '132 k', backup: 'hace 18 min', since: '2024', monthly: 59 }
+];
+
+export const invoicesMock: Invoice[] = [
+  { date: '01 nov 2025', concept: 'Suite', amount: '$112.00', status: 'Pagada' },
+  { date: '01 oct 2025', concept: 'Suite', amount: '$112.00', status: 'Pagada' },
+  { date: '12 sep 2025', concept: 'Mesa — ampliación de dispositivos', amount: '$18.00', status: 'Pagada' },
+  { date: '01 sep 2025', concept: 'Suite', amount: '$112.00', status: 'Pagada' }
+];
+</file>
+
+<file path="src/data/products.ts">
+// src/data/products.ts
+import { Product, PlatformSlide } from '../types';
+
+export const platformSlide: PlatformSlide = {
+  id: 'plat', name: 'Plataforma', sub: 'La suite completa',
+  img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1900',
+  thumb: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=400',
+  heroT: 'Tu negocio, ordenado.<br/>Tu tiempo, de vuelta.',
+  heroS: 'Cuatro productos que trabajan por ti, para que dediques tus horas a lo que de verdad importa.',
+  cta: [['Descubrir productos', 'scroll'], ['Agendar llamada', 'call']]
+};
+
+export const products: Product[] = [
+  {
+    id: 'stockia', name: 'Ahorra Tiempo', badge: 'AT', color: '#0e9f6e', rgb: '14,159,110',
+    tag: 'Punto de venta e inventario',
+    heroT: 'Tu negocio, ordenado. Tu tiempo, de vuelta.',
+    heroS: 'Cuatro productos que trabajan por ti, para que dediques tus horas a lo que de verdad importa.',
+    desc: 'Únete hoy y descubre cómo un negocio ordenado te regala las horas que pierdes en tareas repetitivas. Cuatro herramientas. Un solo objetivo: que tu tiempo vuelva a ser tuyo.',
+    img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1900',
+    thumb: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=400',
+    monthly: 300,
+    bullets: ['Cobra en segundos', 'Inventario siempre bajo control', 'Historial y reportes claros'],
+    detailedFeats: [
+      {
+        t: 'Cobra rápido, con métodos flexibles y pantalla para el cliente',
+        d: 'En caja selecciona tu método de cobro: efectivo (el sistema recomienda cuánto dar de cambio), tarjeta o transferencia. El pago con tarjeta no está ligado directamente a la app; el cajero solo confirma cuando ya se realizó por fuera. Habilita una segunda vista para que el cliente vea lo que se está cobrando, el monto a pagar y, desde la configuración, muestra tus datos bancarios para transferencias.',
+        img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800'
+      },
+      {
+        t: 'Inventario inteligente con fotos y modo celular',
+        d: 'La app tiene un modo acoplado a celulares muy práctico: usa la cámara del celular para escanear códigos de barras de los empaques, o genera nuevos, y agrega productos al instante. Recibe alertas de bajo stock y stock en ceros. Las imágenes de los productos se toman de una carpeta local elegida por ti (cada dispositivo debe tener esa misma carpeta para mostrar las imágenes). Tu inventario se guarda localmente y en la nube, sincronizado en tiempo real por internet, sirviendo como respaldo si pierdes tus datos locales.',
+        img: 'https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&q=80&w=800'
+      },
+      {
+        t: 'Ventas garantizadas con Red Local e Historial permanente',
+        d: 'Conecta varias cajas a la misma red WiFi (Red Local). Una PC elegida por ti será el "Cerebro"; así, aunque no haya internet, las cajas siguen conectadas sin desactualizarse. El historial de ventas se almacena de manera local y en internet, mostrando en línea solo las últimas 15 horas del día, para después pasar a almacenarse permanentemente en la computadora principal. Puedes exportar todo el historial viejo a Excel por las fechas que elijas.',
+        img: 'https://images.unsplash.com/photo-1581351114515-5645511af41b?auto=format&fit=crop&q=80&w=800'
+      },
+      {
+        t: 'Pesaje directo y control riguroso de productos especiales',
+        d: 'Agrega productos por peso (Kg o Lt) y usa tu báscula conectada para agilizar la venta. Además, ten un control más riguroso en la venta de productos bajo autorización o receta (como medicamentos): el sistema bloqueará la venta en caja hasta que el cajero confirme la autorización o capture una foto de evidencia obligatoria.',
+        img: 'https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?auto=format&fit=crop&q=80&w=800'
+      },
+      {
+        t: 'Control de tu equipo (Software multi-dispositivo)',
+        d: 'Conecta hasta 5 dispositivos por tienda (PC, celular o tablet por internet) y administra 4 usuarios por tienda (entre Dueño, supervisores y trabajadores). El servicio se entrega al Dueño para que pueda ajustarlo a su comodidad, incluyendo el manejo de horarios y turnos de los trabajadores. Aclaración importante: solo se proporciona el servicio del programa (instalado en PC Windows como .exe o por la web); no se entregan aparatos físicos como escáneres, básculas ni impresoras de etiquetas o tickets.',
+        img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800'
+      }
+    ],
+    mock: { side: ['Inicio', 'Ventas', 'Inventario', 'Reportes', 'Ajustes'], main: 'stock' },
+    enabled: true
+  },
+  {
+    id: 'citalis', name: 'Citalis', badge: 'CT', color: '#2f9ec4', rgb: '47,158,196', tag: 'Citas y agendas', heroT: '', heroS: '', desc: '', img: '', thumb: '', monthly: 39, bullets: [], detailedFeats: [], mock: { side: [], main: 'cal' }, enabled: false
+  },
+  {
+    id: 'turnia', name: 'Turnia', badge: 'RH', color: '#d97b29', rgb: '217,123,41', tag: 'Personal', heroT: '', heroS: '', desc: '', img: '', thumb: '', monthly: 35, bullets: [], detailedFeats: [], mock: { side: [], main: 'team' }, enabled: false
+  },
+  {
+    id: 'mesa', name: 'Mesa', badge: 'RS', color: '#8a5cd6', rgb: '138,92,214', tag: 'Restaurantes', heroT: '', heroS: '', desc: '', img: '', thumb: '', monthly: 59, bullets: [], detailedFeats: [], mock: { side: [], main: 'kds' }, enabled: false
+  }
+];
+</file>
+
+<file path="src/hooks/useReveal.ts">
+// src/hooks/useReveal.ts
+import { useEffect } from 'react';
+
+export function useReveal() {
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+</file>
+
+<file path="src/styles/global.css">
+/* src/styles/global.css */
+@import './tokens.css';
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: 
+    radial-gradient(circle at 90% 10%, rgba(90,170,230,.16) 0%, transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(180,170,160,.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(200,190,180,.3) 0%, transparent 40%),
+    linear-gradient(to bottom, #f7f1e6, #f0e9da);
+  background-attachment: fixed;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+/* Utilities */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-brd);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Base Layout */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+</file>
+
+<file path="src/styles/tokens.css">
+/* src/styles/tokens.css */
+:root {
+  --bg: #f4ede1;
+  --ink: #232a36;
+  --mut: #737d8c;
+  --line: rgba(43,54,68,.14);
+  --cream: #f5f1e8;
+  --coal: #262b33;
+  --coal2: #333945;
+  --accent: #3d9be3;
+  --accent-d: #2b82c6;
+  --accent-rgb: 61,155,227;
+  --hero: #4a80b4;
+  --hero-d: #3a6a9c;
+  --glass: rgba(255,252,246,.6);
+  --glass-brd: rgba(255,255,255,.72);
+  --ok: #0b7a50;
+  
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+}
+</file>
+
+<file path="src/types/index.ts">
+// src/types/index.ts
+export type IconName = 'box'|'calendar'|'users'|'utensils'|'clock'|'phone'|'bell'|'zap'|'chart'|'shield'|'creditCard'|'smartphone'|'refresh'|'check'|'arrowR'|'arrowL'|'chevD'|'download'|'logout'|'x'|'info';
+
+export interface Product {
+  id: 'stockia'|'citalis'|'turnia'|'mesa';
+  name: string;
+  badge: string;
+  color: string;
+  rgb: string;
+  tag: string;
+  heroT: string;
+  heroS: string;
+  desc: string;
+  img: string;
+  thumb: string;
+  monthly: number;
+  bullets: string[];
+  // Nuevo formato para características detalladas con imagen
+  detailedFeats: { t: string; d: string; img: string }[];
+  mock: { side: string[]; main: 'stock'|'cal'|'team'|'kds' };
+  enabled: boolean;
+}
+
+export interface PlatformSlide {
+  id: 'plat';
+  name: 'Plataforma';
+  sub: string;
+  img: string;
+  thumb: string;
+  heroT: string;
+  heroS: string;
+  cta: [[string, 'scroll'|'call'], [string, 'scroll'|'call']];
+}
+
+export interface Sub {
+  pid: Product['id'];
+  plan: 'Plan anual'|'Plan mensual';
+  renewal: string;
+  sid: string;
+  ver: string;
+  users: string;
+  upct: number;
+  uptime: string;
+  api: string;
+  backup: string;
+  since: string;
+  monthly: number;
+}
+
+export interface Invoice { date: string; concept: string; amount: string; status: string; }
+</file>
+
+<file path="src/utils/icons.tsx">
+// src/utils/icons.tsx
+import React from 'react';
+import { IconName } from '../types';
+
+export function ic(name: IconName, size = 24, color = 'currentColor') {
+  const paths: Record<IconName, React.ReactNode> = {
+    box: <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />,
+    calendar: <><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></>,
+    users: <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></>,
+    utensils: <><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></>,
+    clock: <><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></>,
+    phone: <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>,
+    bell: <><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></>,
+    zap: <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>,
+    chart: <><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></>,
+    shield: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>,
+    creditCard: <><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></>,
+    smartphone: <><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></>,
+    refresh: <><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></>,
+    check: <polyline points="20 6 9 17 4 12"/>,
+    arrowR: <><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></>,
+    arrowL: <><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></>,
+    chevD: <polyline points="6 9 12 15 18 9"/>,
+    download: <><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></>,
+    logout: <><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></>,
+    x: <><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></>,
+    info: <><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></>
+  };
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      {paths[name]}
+    </svg>
+  );
+}
+</file>
+
+<file path="src/views/Account.tsx">
+// src/views/Account.tsx
+import { useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
+import { products } from '../data/products';
+import { Badge, Button } from '../components/UI';
+import { ic } from '../utils/icons';
+import { useReveal } from '../hooks/useReveal';
+
+export const Account = () => {
+  const { loggedIn, user, subs, invoices, logout, addToast } = useAppContext();
+  const navigate = useNavigate();
+  useReveal();
+
+  useEffect(() => {
+    if (!loggedIn) {
+      addToast('Debes iniciar sesión para ver tu cuenta', 'warn');
+      navigate('/');
+    }
+  }, [loggedIn, navigate, addToast]);
+
+  if (!loggedIn || !user) return null;
+
+  const handleProx = () => addToast('Próximamente disponible', 'warn');
+
+  return (
+    <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 48 }}>
+        <div>
+          <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
+            {ic('arrowL', 16)} Volver al inicio
+          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+            <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--accent)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 700 }}>
+              {user.initials}
+            </div>
+            <div>
+              <h1 style={{ fontSize: '2rem', margin: 0 }}>Hola, {user.name.split(' ')[0]}</h1>
+              <p style={{ color: 'var(--mut)' }}>{user.email} · {user.plan}</p>
+            </div>
+          </div>
+        </div>
+        <Button variant="glass" onClick={logout}>{ic('logout', 16)} Cerrar sesión</Button>
+      </div>
+
+      {/* Summary Cards */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24, marginBottom: 48 }}>
+        {[
+          { i: 'shield', l: 'Plan de cuenta', v: user.plan },
+          { i: 'box', l: 'Productos activos', v: `${subs.length} de ${products.length}` },
+          { i: 'calendar', l: 'Próxima renovación', v: '30 nov 2025' },
+          { i: 'creditCard', l: 'Consumo mensual', v: '$112.00' }
+        ].map((c, i) => (
+          <div key={i} className="glass reveal" style={{ padding: 20, borderRadius: 16, display: 'flex', gap: 16, alignItems: 'center' }}>
+            <div style={{ color: 'var(--accent)' }}>{ic(c.i as any, 24)}</div>
+            <div>
+              <div style={{ fontSize: 13, color: 'var(--mut)' }}>{c.l}</div>
+              <div style={{ fontWeight: 600, fontSize: 16 }}>{c.v}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Subscriptions */}
+      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Productos contratados</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: 24, marginBottom: 64 }}>
+        {subs.map((s, i) => {
+          const p = products.find(x => x.id === s.pid)!;
+          return (
+            <div key={i} className="glass reveal" style={{ borderRadius: 20, overflow: 'hidden' }}>
+              <div style={{ padding: 24, borderBottom: '1px solid var(--line)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+                  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                    <Badge text={p.badge} color={p.color} />
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: 18 }}>{p.name}</div>
+                      <div style={{ fontSize: 13, color: 'var(--mut)' }}>{p.tag}</div>
+                    </div>
+                  </div>
+                  <div style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '4px 12px', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>Activo</div>
+                </div>
+                <div style={{ fontSize: 13, color: 'var(--mut)', marginBottom: 8 }}>Uso de licencias: {s.users} ({s.upct}%)</div>
+                <div style={{ height: 4, background: 'rgba(0,0,0,0.05)', borderRadius: 2, overflow: 'hidden' }}>
+                  <div style={{ width: `${s.upct}%`, height: '100%', background: p.color }} />
+                </div>
+              </div>
+              <div style={{ padding: 24, background: 'rgba(255,255,255,0.3)', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, fontSize: 13 }}>
+                <div><div style={{ color: 'var(--mut)' }}>ID Suscripción</div><div style={{ fontWeight: 500 }}>{s.sid}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Versión</div><div style={{ fontWeight: 500 }}>v{s.ver}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Renovación</div><div style={{ fontWeight: 500 }}>{s.renewal}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Uptime</div><div style={{ fontWeight: 500 }}>{s.uptime}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Llamadas API</div><div style={{ fontWeight: 500 }}>{s.api}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Último backup</div><div style={{ fontWeight: 500 }}>{s.backup}</div></div>
+              </div>
+              <div style={{ padding: 16, borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ fontSize: 13, color: 'var(--mut)' }}>{s.plan} · Cliente desde {s.since}</div>
+                <Button variant="dark" to={`/producto/${p.id}`}>Abrir producto →</Button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Invoices */}
+      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Facturación reciente</h2>
+      <div className="glass reveal" style={{ borderRadius: 16, overflow: 'hidden', marginBottom: 64 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <thead style={{ background: 'rgba(0,0,0,0.03)' }}>
+            <tr>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Fecha</th>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Concepto</th>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Estado</th>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14, textAlign: 'right' }}>Importe</th>
+              <th style={{ padding: '16px 24px' }}></th>
+            </tr>
+          </thead>
+          <tbody>
+            {invoices.map((inv, i) => (
+              <tr key={i} style={{ borderTop: '1px solid var(--line)' }}>
+                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.date}</td>
+                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.concept}</td>
+                <td style={{ padding: '16px 24px' }}><span style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '2px 8px', borderRadius: 4, fontSize: 12 }}>{inv.status}</span></td>
+                <td style={{ padding: '16px 24px', fontSize: 14, fontWeight: 600, textAlign: 'right' }}>{inv.amount}</td>
+                <td style={{ padding: '16px 24px', textAlign: 'right' }}><button onClick={handleProx} style={{ color: 'var(--mut)' }}>{ic('download', 18)}</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+</file>
+
+<file path="src/views/Home.tsx">
+// src/views/Home.tsx
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { products, platformSlide } from '../data/products';
+import { useAppContext } from '../context/AppContext';
+import { Brand, Badge, Button } from '../components/UI';
+import { SessionButton } from '../components/SessionButton';
+import { ic } from '../utils/icons';
+import { useReveal } from '../hooks/useReveal';
+import { Modal } from '../components/Modal';
+
+export const Home = () => {
+  useReveal();
+  const navigate = useNavigate();
+  const { addToast } = useAppContext();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const [showCallModal, setShowCallModal] = useState(false);
+  
+  const slides = [platformSlide, ...products];
+
+  // Carousel logic
+  useEffect(() => {
+    if (isHovering) return;
+    const timer = setInterval(() => {
+      setActiveIndex(prev => (prev + 1) % slides.length);
+    }, 5200);
+    return () => clearInterval(timer);
+  }, [isHovering, slides.length]);
+
+  const handleCardClick = (idx: number) => {
+    const slide = slides[idx];
+    if (slide.id === 'plat') {
+      document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const prod = slide as typeof products[0];
+      if (prod.enabled) {
+        navigate(`/producto/${prod.id}`);
+      } else {
+        addToast('Disponible próximamente', 'warn');
+      }
+    }
+  };
+
+  return (
+    <div>
+      <section style={{ height: '100svh', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
+        {/* Backgrounds */}
+        {slides.map((s, i) => (
+          <div key={s.id} style={{ position: 'absolute', inset: 0, opacity: activeIndex === i ? 1 : 0, transition: 'opacity 1s ease', zIndex: 0 }}>
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, var(--hero), var(--hero-d))', mixBlendMode: 'multiply' }} />
+            <img src={s.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: activeIndex === i ? 'scale(1)' : 'scale(1.07)', transition: 'transform 7.5s ease-out' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(21,52,84,0.9), rgba(21,52,84,0.3))' }} />
+          </div>
+        ))}
+
+        {/* Top bar */}
+        <div style={{ position: 'relative', zIndex: 10, display: 'flex', justifyContent: 'space-between', padding: '24px 40px' }}>
+          <Brand cream />
+          <SessionButton />
+        </div>
+
+        {/* Hero Content */}
+        <div style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'center', padding: '0 40px' }}>
+          <div style={{ maxWidth: 640 }}>
+            <h1 style={{ color: 'var(--cream)', fontSize: '4rem', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: slides[activeIndex].heroT }} />
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.25rem', marginBottom: 40, lineHeight: 1.5 }}>
+              {slides[activeIndex].heroS}
+            </p>
+            <div style={{ display: 'flex', gap: 16 }}>
+              {slides[activeIndex].id === 'plat' ? (
+                <>
+                  <Button variant="cream" onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}>Descubrir productos</Button>
+                  <Button variant="ghost-dark" onClick={() => setShowCallModal(true)}>Agendar llamada</Button>
+                </>
+              ) : (
+                <Button variant="cream" onClick={() => handleCardClick(activeIndex)}>Ver producto →</Button>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Cards */}
+        <div style={{ position: 'relative', zIndex: 10, padding: '24px 40px', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+          {slides.map((s, i) => {
+            const isActive = activeIndex === i;
+            return (
+              <div key={s.id} onClick={() => handleCardClick(i)} onMouseEnter={() => setActiveIndex(i)} style={{ background: isActive ? 'var(--cream)' : 'rgba(14,38,62,0.46)', backdropFilter: 'blur(10px)', borderRadius: 16, cursor: 'pointer', transition: 'all 0.3s', overflow: 'hidden', color: isActive ? 'var(--ink)' : 'var(--cream)', border: isActive ? '1px solid transparent' : '1px solid rgba(255,255,255,0.1)' }}>
+                <div style={{ height: 58, overflow: 'hidden' }}>
+                  <img src={s.thumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: isActive ? 'none' : 'grayscale(100%) opacity(0.6)' }} />
+                </div>
+                <div style={{ padding: '12px 16px' }}>
+                  <div style={{ fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-heading)' }}>{s.name}</div>
+                  <div style={{ fontSize: 12, opacity: isActive ? 0.7 : 0.5, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{s.id === 'plat' ? s.sub : (s as any).tag}</div>
+                </div>
+                {/* Progress bar */}
+                <div style={{ height: 3, background: 'rgba(0,0,0,0.1)', width: '100%' }}>
+                  <div style={{ height: '100%', background: s.id === 'plat' ? 'var(--accent)' : (s as any).color, width: isActive && !isHovering ? '100%' : '0%', transition: isActive && !isHovering ? 'width 5.2s linear' : 'none' }} />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="productos" className="container" style={{ padding: '100px 24px' }}>
+        <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
+          <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: 13, letterSpacing: 1.5 }}>PRODUCTOS</span>
+          <h2 style={{ fontSize: '3rem', margin: '16px 0' }}>Una suite. Cuatro formas de ganar tiempo.</h2>
+          <p style={{ color: 'var(--mut)', fontSize: '1.2rem', maxWidth: 600, margin: '0 auto' }}>Cada herramienta está diseñada para resolver un problema específico de tu negocio. Úsalas por separado o combínalas.</p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
+          {products.map((p, i) => (
+            <div key={p.id} className="glass reveal" style={{ borderRadius: 24, overflow: 'hidden', cursor: p.enabled ? 'pointer' : 'default', transitionDelay: `${i * 70}ms` }} onClick={() => p.enabled ? navigate(`/producto/${p.id}`) : addToast('Disponible próximamente', 'warn')}>
+              <div style={{ height: 200, overflow: 'hidden' }}>
+                <img src={p.thumb} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} className="zoom-on-hover" />
+              </div>
+              <div style={{ padding: 24 }}>
+                <Badge text={p.badge} color={p.color} />
+                <h3 style={{ fontSize: '1.8rem', marginTop: 16 }}>{p.name}</h3>
+                <p style={{ color: 'var(--mut)', fontSize: 14, marginBottom: 16 }}>{p.tag}</p>
+                <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
+                  {p.bullets.map((b, bi) => (
+                    <li key={bi} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, color: 'var(--ink)' }}>
+                      <span style={{ color: p.color }}>{ic('check', 16)}</span> {b}
+                    </li>
+                  ))}
+                </ul>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--line)', paddingTop: 16 }}>
+                  
+                  <span style={{ color: p.color, fontWeight: 600, fontSize: 14 }}>{p.enabled ? 'Ver producto →' : 'Próximamente'}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Modal isOpen={showCallModal} onClose={() => setShowCallModal(false)} title="Agenda una llamada">
+        <form onSubmit={(e) => { e.preventDefault(); addToast('Te contactaremos en menos de 24 horas', 'success'); setShowCallModal(false); }} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <input required type="text" placeholder="Nombre completo" style={{ padding: 12, borderRadius: 8, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }} />
+          <input required type="email" placeholder="Email de trabajo" style={{ padding: 12, borderRadius: 8, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }} />
+          <Button variant="blue" type="submit" style={{ justifyContent: 'center', marginTop: 8 }}>Solicitar llamada</Button>
+        </form>
+      </Modal>
+
+      <style>{`.zoom-on-hover:hover { transform: scale(1.05); }`}</style>
+    </div>
+  );
+};
+</file>
+
+<file path="src/views/ProductDetail.tsx">
+// src/views/ProductDetail.tsx
+import React, { useState, useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { products } from '../data/products';
+import { useAppContext } from '../context/AppContext';
+import { Badge, Button } from '../components/UI';
+import { ic } from '../utils/icons';
+import { useReveal } from '../hooks/useReveal';
+import { Modal } from '../components/Modal';
+
+export const ProductDetail = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { loggedIn, subs, addToast } = useAppContext();
+  const p = products.find(x => x.id === id);
+  useReveal();
+
+  const [showSubModal, setShowSubModal] = useState(false);
+
+  useEffect(() => {
+    if (!p) navigate('/');
+    else window.scrollTo(0, 0);
+  }, [p, navigate]);
+
+  if (!p) return null;
+
+  const isSubbed = loggedIn && subs.some(s => s.pid === p.id);
+  const nextIdx = (products.findIndex(x => x.id === p.id) + 1) % products.length;
+  const nextP = products[nextIdx];
+
+  return (
+    <div style={{ '--pc': p.color, '--prgb': p.rgb } as React.CSSProperties}>
+      <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
+        <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 40 }}>
+          {ic('arrowL', 16)} Todos los productos
+        </Link>
+
+        {/* Hero Section */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
+          <div className="reveal">
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
+              <Badge text={p.badge} color={p.color} />
+              <span style={{ fontWeight: 600, fontSize: 18 }}>{p.name}</span>
+              <span style={{ color: 'var(--mut)' }}>·</span>
+              <span style={{ color: 'var(--mut)' }}>{p.tag}</span>
+            </div>
+            <h1 style={{ fontSize: '3.5rem', marginBottom: 24 }}>{p.heroT}</h1>
+            <p style={{ fontSize: '1.2rem', color: 'var(--mut)', marginBottom: 40 }}>{p.heroS}</p>
+            <div style={{ display: 'flex', gap: 16 }}>
+              {isSubbed ? (
+                <Button variant="dark" to="/cuenta">Gestionar suscripción</Button>
+              ) : (
+                <Button variant="dark" onClick={() => setShowSubModal(true)}>Empezar ahora</Button>
+              )}
+            </div>
+          </div>
+          
+          <div className="reveal" style={{ animation: 'float 7s ease-in-out infinite alternate', position: 'relative' }}>
+            <div style={{ position: 'absolute', inset: -20, background: `radial-gradient(circle, rgba(var(--prgb),0.2) 0%, transparent 70%)`, zIndex: -1 }} />
+            <div style={{ background: '#fff', borderRadius: 16, overflow: 'hidden', boxShadow: '0 25px 50px rgba(0,0,0,0.1)', border: '1px solid var(--line)', height: 400 }}>
+              <div style={{ background: '#f8f9fa', padding: '12px 16px', display: 'flex', gap: 8, borderBottom: '1px solid var(--line)' }}>
+                <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff5f56' }} />
+                <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ffbd2e' }} />
+                <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#27c93f' }} />
+              </div>
+              <div style={{ display: 'flex', height: 'calc(100% - 41px)' }}>
+                <div style={{ width: 120, borderRight: '1px solid var(--line)', padding: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  {p.mock.side.map((item, i) => (
+                    <div key={i} style={{ fontSize: 13, color: i === 1 ? 'var(--pc)' : 'var(--mut)', fontWeight: i === 1 ? 600 : 400 }}>{item}</div>
+                  ))}
+                </div>
+                <div style={{ flex: 1, padding: 24, background: `rgba(var(--prgb), 0.03)` }}>
+                  <div style={{ width: '40%', height: 24, background: 'rgba(0,0,0,0.05)', borderRadius: 4, marginBottom: 24 }} />
+                  <div style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
+                     <div style={{ flex: 1, height: 80, background: '#fff', borderRadius: 8, border: '1px solid var(--line)' }} />
+                     <div style={{ flex: 1, height: 80, background: '#fff', borderRadius: 8, border: '1px solid var(--line)' }} />
+                  </div>
+                  <div style={{ height: 140, background: '#fff', borderRadius: 8, border: '1px solid var(--line)' }} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Detailed Features (Zig-Zag) */}
+        <div style={{ marginTop: 120 }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: 60, textAlign: 'center' }}>Todo lo que incluye</h2>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 80 }}>
+            {p.detailedFeats.map((feat, i) => (
+              <div key={i} className="zig-zag-row reveal" style={{ display: 'flex', flexDirection: i % 2 === 0 ? 'row' : 'row-reverse', gap: 48, alignItems: 'center' }}>
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ fontSize: '1.8rem', marginBottom: 16, color: 'var(--ink)' }}>{feat.t}</h3>
+                  <p style={{ color: 'var(--mut)', fontSize: '1.1rem', lineHeight: 1.6 }}>{feat.d}</p>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <img src={feat.img} alt={feat.t} style={{ width: '100%', borderRadius: 24, boxShadow: '0 20px 40px rgba(0,0,0,0.1)', objectFit: 'cover', aspectRatio: '4/3' }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing */}
+        <div style={{ marginTop: 120, textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: 40 }}>Un precio simple, todo incluido.</h2>
+          
+          <div className="glass reveal" style={{ maxWidth: 800, margin: '0 auto', borderRadius: 24, padding: 40, textAlign: 'left', display: 'flex', gap: 40, alignItems: 'center' }}>
+            <div style={{ flex: 1, borderRight: '1px solid var(--line)', paddingRight: 40 }}>
+              <div style={{ fontSize: '4rem', fontFamily: 'var(--font-heading)', color: 'var(--ink)', lineHeight: 1 }}>
+                ${p.monthly}
+              </div>
+              <div style={{ color: 'var(--mut)', marginTop: 8 }}>MXN / mes</div>
+            </div>
+            <div style={{ flex: 1 }}>
+              <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
+                {['Módulos completos', 'Usuarios y sucursales ilimitadas', 'Soporte técnico', 'Sin plazos forzosos'].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}><span style={{ color: 'var(--ok)' }}>{ic('check', 16)}</span> {item}</li>
+                ))}
+              </ul>
+              <Button variant="dark" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setShowSubModal(true)}>
+                Suscribirme ahora
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Next Product Banner */}
+        <div style={{ marginTop: 120 }}>
+          <div onClick={() => { if(nextP.enabled) navigate(`/producto/${nextP.id}`); else addToast('Próximamente', 'warn'); }} className="glass" style={{ padding: 40, borderRadius: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', transition: 'all 0.3s' }}>
+            <div>
+              <div style={{ color: 'var(--mut)', fontSize: 14, marginBottom: 8 }}>Siguiente producto</div>
+              <div style={{ fontSize: 24, fontWeight: 700, color: nextP.color }}>{nextP.name}</div>
+            </div>
+            <div style={{ color: nextP.color }}>{ic('arrowR', 32)}</div>
+          </div>
+        </div>
+      </div>
+
+      <Modal isOpen={showSubModal} onClose={() => setShowSubModal(false)} title={`Suscribirse a ${p.name}`}>
+        <form onSubmit={e => { e.preventDefault(); addToast(`¡Suscripción a ${p.name} activada!`, 'success'); setShowSubModal(false); navigate('/cuenta'); }} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+           <p style={{ color: 'var(--mut)' }}>Plan mensual — ${p.monthly} MXN/mes</p>
+           <input required type="email" placeholder="Tu correo electrónico" style={{ padding: 12, borderRadius: 8, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }} />
+           <Button variant="blue" type="submit" style={{ justifyContent: 'center' }}>Continuar al pago</Button>
+        </form>
+      </Modal>
+
+      <style>{`
+        @keyframes float { 0% { transform: translateY(0px); } 100% { transform: translateY(-20px); } }
+        @media (max-width: 768px) {
+          .zig-zag-row { flex-direction: column !important; text-align: center; }
+          .zig-zag-row > div { width: 100%; }
+        }
+      `}</style>
+    </div>
+  );
+};
+</file>
+
+<file path="src/App.css">
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+</file>
+
+<file path="src/App.tsx">
+// src/App.tsx
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './views/Home';
+import { ProductDetail } from './views/ProductDetail';
+import { Account } from './views/Account';
+import { ToastList } from './components/UI';
+import { Footer } from './components/Footer';
+
+export const App = () => {
+  return (
+    <>
+      <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/producto/:id" element={<ProductDetail />} />
+            <Route path="/cuenta" element={<Account />} />
+          </Routes>
+        </div>
+        <Footer />
+      </main>
+      <ToastList />
+    </>
+  );
+};
+</file>
+
+<file path="src/index.css">
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+</file>
+
+<file path="src/main.tsx">
+// src/main.tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HashRouter } from 'react-router-dom';
+import { AppProvider } from './context/AppContext';
+import { App } from './App';
+import './styles/global.css';
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <HashRouter>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </HashRouter>
+  </React.StrictMode>
+);
+</file>
+
+<file path="src/vite-env.d.ts">
+// src/vite-env.d.ts
+/// <reference types="vite/client" />
+</file>
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import tseslint from 'typescript-eslint'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      js.configs.recommended,
+      tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      globals: globals.browser,
+    },
+  },
+])
+</file>
+
+<file path="index.html">
+<!-- index.html -->
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahorra-Tiempo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "name": "ahorra-tiempo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
+</file>
+
+<file path="README.md">
+# React + TypeScript + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
+```
+
+You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
+```
+</file>
+
+<file path="tsconfig.app.json">
+// tsconfig.node.json
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts"]
+}
+</file>
+
+<file path="tsconfig.json">
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+</file>
+
+<file path="tsconfig.node.json">
+// tsconfig.node.json
+{
+  "compilerOptions": {
+    "composite": true,
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts"]
+}
+</file>
+
+<file path="vite.config.ts">
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+});
+</file>
+
+</files>

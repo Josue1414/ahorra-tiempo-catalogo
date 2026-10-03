@@ -1,0 +1,21 @@
+/* src/styles/tokens.css */
+:root {
+  --bg: #f4ede1;
+  --ink: #232a36;
+  --mut: #737d8c;
+  --line: rgba(43,54,68,.14);
+  --cream: #f5f1e8;
+  --coal: #262b33;
+  --coal2: #333945;
+  --accent: #3d9be3;
+  --accent-d: #2b82c6;
+  --accent-rgb: 61,155,227;
+  --hero: #4a80b4;
+  --hero-d: #3a6a9c;
+  --glass: rgba(255,252,246,.6);
+  --glass-brd: rgba(255,255,255,.72);
+  --ok: #0b7a50;
+  
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+}
