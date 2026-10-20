@@ -25,12 +25,12 @@ export const Account = () => {
 
   return (
     <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 48 }}>
+      <div className="flex flex-wrap items-start justify-between gap-6" style={{ marginBottom: 48 }}>
         <div>
           <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
             {ic('arrowL', 16)} Volver al inicio
           </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
+          <div className="flex items-center gap-4 sm:gap-5">
             <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--accent)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 700 }}>
               {user.initials}
             </div>
@@ -40,11 +40,13 @@ export const Account = () => {
             </div>
           </div>
         </div>
-        <Button variant="glass" onClick={logout}>{ic('logout', 16)} Cerrar sesión</Button>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <Button variant="glass" onClick={logout}>{ic('logout', 16)} Cerrar sesión</Button>
+        </div>
       </div>
 
       {/* Summary Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24, marginBottom: 48 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 20, marginBottom: 48 }}>
         {[
           { i: 'shield', l: 'Plan de cuenta', v: user.plan },
           { i: 'box', l: 'Productos activos', v: `${subs.length} de ${products.length}` },
@@ -63,7 +65,7 @@ export const Account = () => {
 
       {/* Subscriptions */}
       <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Productos contratados</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: 24, marginBottom: 64 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: 24, marginBottom: 64 }}>
         {subs.map((s, i) => {
           const p = products.find(x => x.id === s.pid)!;
           return (
@@ -84,7 +86,7 @@ export const Account = () => {
                   <div style={{ width: `${s.upct}%`, height: '100%', background: p.color }} />
                 </div>
               </div>
-              <div style={{ padding: 24, background: 'rgba(255,255,255,0.3)', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, fontSize: 13 }}>
+              <div style={{ padding: 24, background: 'rgba(255,255,255,0.3)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 16, fontSize: 13 }}>
                 <div><div style={{ color: 'var(--mut)' }}>ID Suscripción</div><div style={{ fontWeight: 500 }}>{s.sid}</div></div>
                 <div><div style={{ color: 'var(--mut)' }}>Versión</div><div style={{ fontWeight: 500 }}>v{s.ver}</div></div>
                 <div><div style={{ color: 'var(--mut)' }}>Renovación</div><div style={{ fontWeight: 500 }}>{s.renewal}</div></div>
@@ -103,7 +105,7 @@ export const Account = () => {
 
       {/* Invoices */}
       <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Facturación reciente</h2>
-      <div className="glass reveal" style={{ borderRadius: 16, overflow: 'hidden', marginBottom: 64 }}>
+      <div className="glass reveal" style={{ borderRadius: 16, overflowX: 'auto', marginBottom: 64 }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead style={{ background: 'rgba(0,0,0,0.03)' }}>
             <tr>

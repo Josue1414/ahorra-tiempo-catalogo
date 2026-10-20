@@ -1,59 +1,68 @@
-// src/components/Footer.tsx
-import React from 'react';
-import { Brand} from './UI';
+import { Link } from 'react-router-dom';
+import { Brand } from './UI';
 import { useAppContext } from '../context/AppContext';
-import { ic } from '../utils/icons';
+
+const products = [
+  { id: 'stockia', name: 'MiTienda', available: true },
+  { id: 'citalis', name: 'Citalis', available: false },
+  { id: 'turnia', name: 'Turnia', available: false },
+  { id: 'mesa', name: 'Mesa', available: false }
+];
+
+const futureProjects = ['PredicaMap', 'Asamblea-GT-JW'];
 
 export const Footer = () => {
   const { addToast } = useAppContext();
-  const handleProx = (e: React.MouseEvent) => {
-    e.preventDefault();
-    addToast('Disponible próximamente en la versión completa', 'warn');
-  };
 
   return (
-    <footer style={{ background: 'linear-gradient(to bottom, #1e2530, #171c25)', color: 'var(--cream)', paddingTop: 64, paddingBottom: 24, borderTop: '4px solid var(--accent)' }}>
+    <footer className="site-footer">
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, marginBottom: 48 }}>
-          <div>
+        <div className="site-footer__grid">
+          <div className="site-footer__brand">
             <Brand cream />
-            <p style={{ color: 'var(--mut)', fontSize: 14, marginTop: 16, marginBottom: 24 }}>La suite de software que opera tu negocio de punta a punta.</p>
-            <form onSubmit={e => { e.preventDefault(); addToast('¡Suscrito al newsletter!', 'success'); }} style={{ display: 'flex', gap: 8 }}>
-              <input type="email" required placeholder="Tu email" style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff', flex: 1 }} />
-              <button type="submit" style={{ background: 'var(--accent)', color: '#fff', padding: '8px 12px', borderRadius: 6, fontWeight: 600 }}>Suscribirme</button>
-            </form>
+            <p>Herramientas digitales para que los negocios trabajen mejor y recuperes tu tiempo.</p>
           </div>
-          <div>
-            <h4 style={{ marginBottom: 16 }}>Productos</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
-              <li><a href="#/producto/stockia">Stockia</a></li>
-              <li><a href="#/producto/citalis">Citalis</a></li>
-              <li><a href="#/producto/turnia">Turnia</a></li>
-              <li><a href="#/producto/mesa">Mesa</a></li>
+
+          <nav aria-label="Productos" className="site-footer__group">
+            <h2>Productos</h2>
+            <ul>
+              {products.map(product => (
+                <li key={product.id}>
+                  <Link to={`/producto/${product.id}`}>
+                    {product.name}
+                    {!product.available && <span className="site-footer__status">Próximamente</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="site-footer__group">
+            <h2>En camino</h2>
+            <ul>
+              {futureProjects.map(project => (
+                <li key={project}>
+                  <button
+                    type="button"
+                    onClick={() => addToast(`${project} estará disponible próximamente.`, 'info')}
+                  >
+                    {project}
+                    <span className="site-footer__status">Próximamente</span>
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
-          <div>
-            <h4 style={{ marginBottom: 16 }}>Empresa</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
-              <li><a href="#" onClick={handleProx}>Sobre nosotros</a></li>
-              <li><a href="#" onClick={handleProx}>Blog</a></li>
-              <li><a href="#" onClick={handleProx}>Trabaja con nosotros</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ marginBottom: 16 }}>Contacto</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
-              <li style={{ display: 'flex', gap: 8 }}>{ic('phone', 16)} +34 910 246 800</li>
-              <li style={{ display: 'flex', gap: 8 }}>{ic('info', 16)} hola@ahorratiempo.com</li>
-            </ul>
+
+          <div className="site-footer__group site-footer__contact">
+            <h2>Contacto</h2>
+            <p>Pronto compartiremos nuestros canales de atención.</p>
           </div>
         </div>
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', color: 'var(--mut)', fontSize: 13 }}>
-          <span>© 2026 Ahorra-Tiempo S.L.</span>
-          <div style={{ display: 'flex', gap: 16 }}>
-            <a href="#" onClick={handleProx}>Privacidad</a>
-            <a href="#" onClick={handleProx}>Términos</a>
-          </div>
+
+        <div className="site-footer__bottom">
+          <span>© 2026 Ahorra Tiempo</span>
+          <span>Hecho para ayudarte a aprovechar mejor tu tiempo.</span>
         </div>
       </div>
     </footer>
