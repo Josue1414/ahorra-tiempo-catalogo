@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import { Home } from './views/Home';
 import { ProductDetail } from './views/ProductDetail';
 import { Account } from './views/Account';
+import { Login } from './views/Login';
+import { AccountProduct } from './views/AccountProduct';
 import { ToastList } from './components/UI';
 import { Footer } from './components/Footer';
 
@@ -15,6 +17,8 @@ export const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/producto/:id" element={<ProductDetail />} />
             <Route path="/cuenta" element={<Account />} />
+            <Route path="/cuenta/producto/:id" element={<AccountProduct />} />
+            <Route path="/iniciar-sesion" element={<Login />} />
           </Routes>
         </div>
         <Footer />

@@ -60,6 +60,15 @@ src/
     products.ts
   hooks/
     useReveal.ts
+  products/
+    stockia/
+      components/
+        suscripcion/
+          FormularioSuscripcion.tsx
+          SeccionSuscripcion.tsx
+          SelectorPlanes.tsx
+      subscription.ts
+    subscriptionRegistry.ts
   styles/
     global.css
     tokens.css
@@ -127,70 +136,6 @@ This section contains the contents of the repository's files.
 
 <file path="src/assets/vite.svg">
 <svg xmlns="http://www.w3.org/2000/svg" width="77" height="47" fill="none" aria-labelledby="vite-logo-title" viewBox="0 0 77 47"><title id="vite-logo-title">Vite</title><style>.parenthesis{fill:#000}@media (prefers-color-scheme:dark){.parenthesis{fill:#fff}}</style><path fill="#9135ff" d="M40.151 45.71c-.663.844-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.493c-.92 0-1.457-1.04-.92-1.788l7.479-10.471c1.07-1.498 0-3.578-1.842-3.578H15.443c-.92 0-1.456-1.04-.92-1.788l9.696-13.576c.213-.297.556-.474.92-.474h28.894c.92 0 1.456 1.04.92 1.788l-7.48 10.472c-1.07 1.497 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.087.89 1.83L40.153 45.712z"/><mask id="a" width="48" height="47" x="14" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha"><path fill="#000" d="M40.047 45.71c-.663.843-2.02.374-2.02-.699V34.708a2.26 2.26 0 0 0-2.262-2.262H24.389c-.92 0-1.457-1.04-.92-1.788l7.479-10.472c1.07-1.497 0-3.578-1.842-3.578H15.34c-.92 0-1.456-1.04-.92-1.788l9.696-13.575c.213-.297.556-.474.92-.474H53.93c.92 0 1.456 1.04.92 1.788L47.37 13.03c-1.07 1.498 0 3.578 1.842 3.578h11.376c.944 0 1.474 1.088.89 1.831L40.049 45.712z"/></mask><g mask="url(#a)"><g filter="url(#b)"><ellipse cx="5.508" cy="14.704" fill="#eee6ff" rx="5.508" ry="14.704" transform="rotate(269.814 20.96 11.29)scale(-1 1)"/></g><g filter="url(#c)"><ellipse cx="10.399" cy="29.851" fill="#eee6ff" rx="10.399" ry="29.851" transform="rotate(89.814 -16.902 -8.275)scale(1 -1)"/></g><g filter="url(#d)"><ellipse cx="5.508" cy="30.487" fill="#8900ff" rx="5.508" ry="30.487" transform="rotate(89.814 -19.197 -7.127)scale(1 -1)"/></g><g filter="url(#e)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.928 4.177)scale(1 -1)"/></g><g filter="url(#f)"><ellipse cx="5.508" cy="30.599" fill="#8900ff" rx="5.508" ry="30.599" transform="rotate(89.814 -25.738 5.52)scale(1 -1)"/></g><g filter="url(#g)"><ellipse cx="14.072" cy="22.078" fill="#eee6ff" rx="14.072" ry="22.078" transform="rotate(93.35 31.245 55.578)scale(-1 1)"/></g><g filter="url(#h)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#i)"><ellipse cx="3.47" cy="21.501" fill="#8900ff" rx="3.47" ry="21.501" transform="rotate(89.009 35.419 55.202)scale(-1 1)"/></g><g filter="url(#j)"><ellipse cx="14.592" cy="9.743" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(39.51 14.592 9.743)"/></g><g filter="url(#k)"><ellipse cx="61.728" cy="-5.321" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 61.728 -5.32)"/></g><g filter="url(#l)"><ellipse cx="55.618" cy="7.104" fill="#00c2ff" rx="5.971" ry="9.665" transform="rotate(37.892 55.618 7.104)"/></g><g filter="url(#m)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#n)"><ellipse cx="12.326" cy="39.103" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 12.326 39.103)"/></g><g filter="url(#o)"><ellipse cx="49.857" cy="30.678" fill="#8900ff" rx="4.407" ry="29.108" transform="rotate(37.892 49.857 30.678)"/></g><g filter="url(#p)"><ellipse cx="52.623" cy="33.171" fill="#00c2ff" rx="5.971" ry="15.297" transform="rotate(37.892 52.623 33.17)"/></g></g><path d="M6.919 0c-9.198 13.166-9.252 33.575 0 46.789h6.215c-9.25-13.214-9.196-33.623 0-46.789zm62.424 0h-6.215c9.198 13.166 9.252 33.575 0 46.789h6.215c9.25-13.214 9.196-33.623 0-46.789" class="parenthesis"/><defs><filter id="b" width="60.045" height="41.654" x="-5.564" y="16.92" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="c" width="90.34" height="51.437" x="-40.407" y="-6.762" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="d" width="79.355" height="29.4" x="-35.435" y="2.801" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="e" width="79.579" height="29.4" x="-30.84" y="20.8" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="f" width="79.579" height="29.4" x="-29.307" y="21.949" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="g" width="74.749" height="58.852" x="29.961" y="-17.13" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="7.659"/></filter><filter id="h" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="i" width="61.377" height="25.362" x="37.754" y="3.055" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="j" width="56.045" height="63.649" x="-13.43" y="-22.082" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="k" width="54.814" height="64.646" x="34.321" y="-37.644" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="l" width="33.541" height="35.313" x="38.847" y="-10.552" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="m" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="n" width="54.814" height="64.646" x="-15.081" y="6.78" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="o" width="54.814" height="64.646" x="22.45" y="-1.645" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter><filter id="p" width="39.409" height="43.623" x="32.919" y="11.36" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_2002_17286" stdDeviation="4.596"/></filter></defs></svg>
-</file>
-
-<file path="src/components/Footer.tsx">
-// src/components/Footer.tsx
-import React from 'react';
-import { Brand} from './UI';
-import { useAppContext } from '../context/AppContext';
-import { ic } from '../utils/icons';
-
-export const Footer = () => {
-  const { addToast } = useAppContext();
-  const handleProx = (e: React.MouseEvent) => {
-    e.preventDefault();
-    addToast('Disponible próximamente en la versión completa', 'warn');
-  };
-
-  return (
-    <footer style={{ background: 'linear-gradient(to bottom, #1e2530, #171c25)', color: 'var(--cream)', paddingTop: 64, paddingBottom: 24, borderTop: '4px solid var(--accent)' }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, marginBottom: 48 }}>
-          <div>
-            <Brand cream />
-            <p style={{ color: 'var(--mut)', fontSize: 14, marginTop: 16, marginBottom: 24 }}>La suite de software que opera tu negocio de punta a punta.</p>
-            <form onSubmit={e => { e.preventDefault(); addToast('¡Suscrito al newsletter!', 'success'); }} style={{ display: 'flex', gap: 8 }}>
-              <input type="email" required placeholder="Tu email" style={{ padding: '8px 12px', borderRadius: 6, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff', flex: 1 }} />
-              <button type="submit" style={{ background: 'var(--accent)', color: '#fff', padding: '8px 12px', borderRadius: 6, fontWeight: 600 }}>Suscribirme</button>
-            </form>
-          </div>
-          <div>
-            <h4 style={{ marginBottom: 16 }}>Productos</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
-              <li><a href="#/producto/stockia">Stockia</a></li>
-              <li><a href="#/producto/citalis">Citalis</a></li>
-              <li><a href="#/producto/turnia">Turnia</a></li>
-              <li><a href="#/producto/mesa">Mesa</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ marginBottom: 16 }}>Empresa</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
-              <li><a href="#" onClick={handleProx}>Sobre nosotros</a></li>
-              <li><a href="#" onClick={handleProx}>Blog</a></li>
-              <li><a href="#" onClick={handleProx}>Trabaja con nosotros</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style={{ marginBottom: 16 }}>Contacto</h4>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, color: 'var(--mut)', fontSize: 14 }}>
-              <li style={{ display: 'flex', gap: 8 }}>{ic('phone', 16)} +34 910 246 800</li>
-              <li style={{ display: 'flex', gap: 8 }}>{ic('info', 16)} hola@ahorratiempo.com</li>
-            </ul>
-          </div>
-        </div>
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: 24, display: 'flex', justifyContent: 'space-between', color: 'var(--mut)', fontSize: 13 }}>
-          <span>© 2026 Ahorra-Tiempo S.L.</span>
-          <div style={{ display: 'flex', gap: 16 }}>
-            <a href="#" onClick={handleProx}>Privacidad</a>
-            <a href="#" onClick={handleProx}>Términos</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
 </file>
 
 <file path="src/components/Modal.tsx">
@@ -502,60 +447,505 @@ export function useReveal() {
 }
 </file>
 
-<file path="src/styles/global.css">
-/* src/styles/global.css */
-@import './tokens.css';
+<file path="src/products/stockia/components/suscripcion/FormularioSuscripcion.tsx">
+import { useState, type FormEvent } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
+import { ic } from '../../../../utils/icons';
+import {
+  getStockiaQuote,
+  type SubscriptionDuration,
+  type SubscriptionPlan
+} from '../../subscription';
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+export type PaymentMethod = 'domiciliado' | 'oxxo' | 'tarjeta';
 
-body {
-  font-family: var(--font-body);
-  background: 
-    radial-gradient(circle at 90% 10%, rgba(90,170,230,.16) 0%, transparent 40%),
-    radial-gradient(circle at 10% 90%, rgba(180,170,160,.2) 0%, transparent 40%),
-    radial-gradient(circle at 50% 100%, rgba(200,190,180,.3) 0%, transparent 40%),
-    linear-gradient(to bottom, #f7f1e6, #f0e9da);
-  background-attachment: fixed;
-  color: var(--ink);
-  line-height: 1.6;
-  overflow-x: hidden;
+interface FormularioSuscripcionProps {
+  plan: SubscriptionPlan;
+  planes: SubscriptionPlan[];
+  alVolver: () => void;
+  alCompletar: (metodo: PaymentMethod) => void;
+  alCambiarPlan: (plan: SubscriptionPlan) => void;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.02em;
-  font-weight: 600;
-  line-height: 1.2;
+const mesesDisponibles: SubscriptionDuration[] = [1, 3, 6, 12];
+
+const money = (amount: number) =>
+  amount.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+
+export default function FormularioSuscripcion({
+  plan,
+  planes,
+  alVolver,
+  alCompletar,
+  alCambiarPlan
+}: FormularioSuscripcionProps) {
+  const [planListOpen, setPlanListOpen] = useState(false);
+  const [storesInfoOpen, setStoresInfoOpen] = useState(false);
+  const [months, setMonths] = useState<SubscriptionDuration>(1);
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('oxxo');
+  const [showPin, setShowPin] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirmation, setShowPasswordConfirmation] = useState(false);
+  const [formError, setFormError] = useState('');
+  const [form, setForm] = useState({
+    email: '',
+    emailConfirmation: '',
+    username: '',
+    storeName: '',
+    pin: '',
+    password: '',
+    passwordConfirmation: ''
+  });
+
+  const quote = getStockiaQuote(plan, months);
+
+  const updateField = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.currentTarget;
+    const normalizedValue = name === 'pin'
+      ? value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6)
+      : name === 'email' || name === 'emailConfirmation'
+        ? value.trimStart()
+        : value;
+
+    setForm(current => ({ ...current, [name]: normalizedValue }));
+    setFormError('');
+  };
+
+  const submitForm = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setFormError('');
+
+    if (form.email.trim().toLowerCase() !== form.emailConfirmation.trim().toLowerCase()) {
+      setFormError('Los correos electrónicos no coinciden.');
+      return;
+    }
+    if (!/^[A-Z]{2}\d{4}$/.test(form.pin)) {
+      setFormError('El PIN debe tener exactamente 2 letras y 4 números (por ejemplo, AB1234).');
+      return;
+    }
+    if (!/^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,128}$/.test(form.password)) {
+      setFormError('La contraseña debe tener al menos 8 caracteres, una mayúscula y un carácter especial.');
+      return;
+    }
+    if (form.password !== form.passwordConfirmation) {
+      setFormError('Las contraseñas no coinciden.');
+      return;
+    }
+
+    setForm(current => ({ ...current, pin: '', password: '', passwordConfirmation: '' }));
+    alCompletar(paymentMethod);
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: '12px 16px',
+    borderRadius: '8px',
+    border: '1px solid var(--line)',
+    background: 'rgba(255,255,255,0.8)',
+    color: 'var(--ink)',
+    fontSize: '15px',
+    outline: 'none'
+  } as const;
+  const labelStyle = {
+    display: 'block',
+    fontSize: '14px',
+    fontWeight: 500,
+    color: 'var(--mut)',
+    marginBottom: '8px'
+  } as const;
+  const sectionHeadingStyle = {
+    fontSize: '1.2rem',
+    marginBottom: '16px',
+    borderBottom: '1px solid var(--line)',
+    paddingBottom: '8px'
+  } as const;
+  const secretFieldStyle = { ...inputStyle, paddingRight: '48px' } as const;
+  const visibilityButtonStyle = {
+    position: 'absolute' as const,
+    right: '12px',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'var(--mut)',
+    padding: '4px'
+  };
+
+  return (
+    <div className="glass" style={{ maxWidth: '720px', margin: '0 auto', borderRadius: '24px', padding: 'clamp(20px, 5vw, 40px)', textAlign: 'left' }}>
+      <button
+        type="button"
+        onClick={alVolver}
+        style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '24px', fontSize: '14px' }}
+      >
+        {ic('arrowL', 16)} Volver a los planes
+      </button>
+
+      <div style={{ marginBottom: '24px' }}>
+        <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Crear una tienda MiTienda</h3>
+        <p style={{ color: 'var(--mut)', fontSize: '14px' }}>
+          Completa los datos del dueño y del comercio. El correo puede tener varias tiendas.
+        </p>
+      </div>
+
+      <div style={{ background: 'rgba(var(--prgb), 0.1)', borderRadius: '12px', marginBottom: '24px', border: '1px solid rgba(var(--prgb), 0.2)', overflow: 'hidden' }}>
+        <button
+          type="button"
+          aria-expanded={planListOpen}
+          onClick={() => setPlanListOpen(open => !open)}
+          style={{ width: '100%', padding: '18px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left' }}
+        >
+          <span>
+            <span style={{ display: 'block', fontSize: '12px', color: 'var(--pc)', fontWeight: 600, textTransform: 'uppercase' }}>Plan seleccionado</span>
+            <span style={{ display: 'block', fontSize: '18px', fontWeight: 600, color: 'var(--ink)' }}>{plan.name}</span>
+          </span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <strong style={{ fontSize: '20px', color: 'var(--ink)' }}>{money(plan.monthlyPrice)}<small style={{ fontSize: '13px', color: 'var(--mut)', fontWeight: 400 }}> / mes</small></strong>
+            {ic('chevD', 20)}
+          </span>
+        </button>
+        {planListOpen && (
+          <div style={{ borderTop: '1px solid rgba(var(--prgb), 0.2)', padding: '12px 20px', background: 'rgba(255,255,255,0.5)' }}>
+            {planes.map(option => (
+              <button
+                key={option.code}
+                type="button"
+                aria-pressed={option.code === plan.code}
+                onClick={() => {
+                  alCambiarPlan(option);
+                  setPlanListOpen(false);
+                }}
+                style={{ width: '100%', display: 'flex', justifyContent: 'space-between', padding: '12px', borderRadius: '8px', background: option.code === plan.code ? 'var(--cream)' : 'transparent', textAlign: 'left' }}
+              >
+                <span style={{ fontWeight: option.code === plan.code ? 700 : 500 }}>{option.name}</span>
+                <span>{money(option.monthlyPrice)} / mes</span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div style={{ marginBottom: '28px', border: '1px solid var(--line)', borderRadius: '12px', padding: '16px' }}>
+        <button
+          type="button"
+          aria-expanded={storesInfoOpen}
+          onClick={() => setStoresInfoOpen(open => !open)}
+          style={{ width: '100%', display: 'flex', justifyContent: 'space-between', textAlign: 'left', fontWeight: 600 }}
+        >
+          ¿Ya tienes tiendas MiTienda con este correo?
+          {ic('chevD', 18)}
+        </button>
+        {storesInfoOpen && (
+          <p style={{ marginTop: '12px', fontSize: '14px', color: 'var(--mut)' }}>
+            Tus tiendas se mostrarán aquí únicamente después de verificar tu correo e iniciar sesión. Así evitamos revelar las tiendas asociadas a correos de otras personas. Este catálogo aún no está conectado al servicio de consulta.
+          </p>
+        )}
+      </div>
+
+      <form onSubmit={submitForm} style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+        <section>
+          <h3 style={sectionHeadingStyle}>Duración y precio</h3>
+          <fieldset style={{ border: 0, padding: 0 }}>
+            <legend style={{ ...labelStyle, marginBottom: '12px' }}>Elige el periodo que quieres contratar</legend>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '8px' }}>
+              {mesesDisponibles.map(duration => {
+                const optionQuote = getStockiaQuote(plan, duration);
+                return (
+                  <label key={duration} style={{ border: months === duration ? '2px solid var(--pc)' : '1px solid var(--line)', background: months === duration ? 'rgba(var(--prgb), 0.05)' : '#fff', borderRadius: '8px', padding: '12px 8px', textAlign: 'center', cursor: paymentMethod === 'tarjeta' && duration !== 1 ? 'not-allowed' : 'pointer', opacity: paymentMethod === 'tarjeta' && duration !== 1 ? 0.55 : 1 }}>
+                    <input
+                      type="radio"
+                      name="duration"
+                      value={duration}
+                      checked={months === duration}
+                      disabled={paymentMethod === 'tarjeta' && duration !== 1}
+                      onChange={() => setMonths(duration)}
+                    />
+                    <span style={{ display: 'block', fontWeight: 600 }}>{duration} {duration === 1 ? 'mes' : 'meses'}</span>
+                    <span style={{ display: 'block', fontSize: '13px' }}>{money(optionQuote.total)}</span>
+                    {optionQuote.discount > 0 && (
+                      <span style={{ display: 'block', fontSize: '12px', color: 'var(--ok)' }}>Ahorras {money(optionQuote.discount)}</span>
+                    )}
+                  </label>
+                );
+              })}
+            </div>
+          </fieldset>
+        </section>
+
+        <section>
+          <h3 style={sectionHeadingStyle}>Datos de la cuenta y del comercio</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
+            <div>
+              <label htmlFor="subscription-email" style={labelStyle}>Correo electrónico</label>
+              <input id="subscription-email" type="email" name="email" autoComplete="email" required maxLength={254} value={form.email} onChange={updateField} style={inputStyle} placeholder="tu@correo.com" />
+            </div>
+            <div>
+              <label htmlFor="subscription-email-confirmation" style={labelStyle}>Confirmar correo electrónico</label>
+              <input id="subscription-email-confirmation" type="email" name="emailConfirmation" autoComplete="email" required maxLength={254} value={form.emailConfirmation} onChange={updateField} style={inputStyle} placeholder="Repite tu correo" />
+            </div>
+            <div>
+              <label htmlFor="subscription-username" style={labelStyle}>Nombre de usuario / dueño</label>
+              <input id="subscription-username" type="text" name="username" autoComplete="name" required minLength={2} maxLength={80} value={form.username} onChange={updateField} style={inputStyle} placeholder="Nombre del dueño" />
+            </div>
+            <div>
+              <label htmlFor="subscription-store-name" style={labelStyle}>Nombre del comercio</label>
+              <input id="subscription-store-name" type="text" name="storeName" required minLength={2} maxLength={120} value={form.storeName} onChange={updateField} style={inputStyle} placeholder="Ej. Abarrotes La Esperanza" />
+            </div>
+            <div>
+              <label htmlFor="subscription-pin" style={labelStyle}>PIN (2 letras y 4 números)</label>
+              <p id="subscription-pin-help" style={{ marginBottom: '8px', color: 'var(--mut)', fontSize: '13px' }}>
+                PIN de acceso rápido para identificar al dueño en MiTienda; no sustituye la contraseña de tu cuenta.
+              </p>
+              <div style={{ position: 'relative' }}>
+                <input id="subscription-pin" type={showPin ? 'text' : 'password'} name="pin" autoComplete="off" required minLength={6} maxLength={6} pattern="[A-Za-z]{2}[0-9]{4}" title="Escribe 2 letras seguidas de 4 números, por ejemplo AB1234" aria-describedby="subscription-pin-help" value={form.pin} onChange={updateField} style={secretFieldStyle} placeholder="AB1234" />
+                <button type="button" onClick={() => setShowPin(visible => !visible)} aria-label={showPin ? 'Ocultar PIN' : 'Mostrar PIN'} aria-pressed={showPin} style={visibilityButtonStyle}>
+                  {showPin ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+            <div>
+              <label htmlFor="subscription-password" style={labelStyle}>Contraseña</label>
+              <p id="subscription-password-help" style={{ marginBottom: '8px', color: 'var(--mut)', fontSize: '13px' }}>
+                Mínimo 8 caracteres, una mayúscula y un carácter especial (por ejemplo, ! o #).
+              </p>
+              <div style={{ position: 'relative' }}>
+                <input id="subscription-password" type={showPassword ? 'text' : 'password'} name="password" autoComplete="new-password" required minLength={8} maxLength={128} pattern="(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,128}" title="Usa al menos 8 caracteres, una mayúscula y un carácter especial." aria-describedby="subscription-password-help" value={form.password} onChange={updateField} style={secretFieldStyle} placeholder="Mínimo 8 caracteres" />
+                <button type="button" onClick={() => setShowPassword(visible => !visible)} aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'} aria-pressed={showPassword} style={visibilityButtonStyle}>
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+            <div>
+              <label htmlFor="subscription-password-confirmation" style={labelStyle}>Confirmar contraseña</label>
+              <div style={{ position: 'relative' }}>
+                <input id="subscription-password-confirmation" type={showPasswordConfirmation ? 'text' : 'password'} name="passwordConfirmation" autoComplete="new-password" required minLength={8} maxLength={128} pattern="(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,128}" title="Usa al menos 8 caracteres, una mayúscula y un carácter especial." value={form.passwordConfirmation} onChange={updateField} style={secretFieldStyle} placeholder="Repite tu contraseña" />
+                <button type="button" onClick={() => setShowPasswordConfirmation(visible => !visible)} aria-label={showPasswordConfirmation ? 'Ocultar confirmación de contraseña' : 'Mostrar confirmación de contraseña'} aria-pressed={showPasswordConfirmation} style={visibilityButtonStyle}>
+                  {showPasswordConfirmation ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h3 style={sectionHeadingStyle}>Forma de pago</h3>
+          <fieldset style={{ border: 0, padding: 0, display: 'grid', gap: '12px' }}>
+            <legend style={{ ...labelStyle, marginBottom: '12px' }}>Selecciona cómo pagarás</legend>
+            <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', border: paymentMethod === 'domiciliado' ? '2px solid var(--pc)' : '1px solid var(--line)', borderRadius: '10px', padding: '14px', cursor: 'pointer', background: '#fff' }}>
+              <input type="radio" name="paymentMethod" value="domiciliado" checked={paymentMethod === 'domiciliado'} onChange={() => setPaymentMethod('domiciliado')} />
+              <span><strong>Pago domiciliado</strong><span style={{ display: 'block', color: 'var(--mut)', fontSize: '13px' }}>Cargo automático cada {months} {months === 1 ? 'mes' : 'meses'}; requiere autorizar el mandato de pago.</span></span>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', border: paymentMethod === 'oxxo' ? '2px solid var(--pc)' : '1px solid var(--line)', borderRadius: '10px', padding: '14px', cursor: 'pointer', background: '#fff' }}>
+              <input type="radio" name="paymentMethod" value="oxxo" checked={paymentMethod === 'oxxo'} onChange={() => setPaymentMethod('oxxo')} />
+              <span><strong>Pago único en OXXO</strong><span style={{ display: 'block', color: 'var(--mut)', fontSize: '13px' }}>Pagas este periodo con una ficha; no se renueva automáticamente.</span></span>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', border: paymentMethod === 'tarjeta' ? '2px solid var(--pc)' : '1px solid var(--line)', borderRadius: '10px', padding: '14px', cursor: 'pointer', background: '#fff' }}>
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="tarjeta"
+                checked={paymentMethod === 'tarjeta'}
+                onChange={() => {
+                  setPaymentMethod('tarjeta');
+                  setMonths(1);
+                }}
+              />
+              <span><strong>Tarjeta · un solo mes</strong><span style={{ display: 'block', color: 'var(--mut)', fontSize: '13px' }}>Pago único por un mes, sin renovación automática. La opción estará disponible al conectar la pasarela.</span></span>
+            </label>
+          </fieldset>
+        </section>
+
+        <section aria-label="Resumen de la contratación" style={{ border: '1px solid var(--line)', borderRadius: '12px', padding: '18px', background: 'rgba(255,255,255,0.55)' }}>
+          <h3 style={{ ...sectionHeadingStyle, marginBottom: '12px' }}>Resumen</h3>
+          <div style={{ display: 'grid', gap: '6px', fontSize: '14px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px' }}><span>Plan {plan.name} · {months} {months === 1 ? 'mes' : 'meses'}</span><span>{money(quote.subtotal)}</span></div>
+            {quote.discount > 0 && <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ok)' }}><span>Descuento del paquete</span><span>-{money(quote.discount)}</span></div>}
+            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--line)', paddingTop: '10px', marginTop: '4px', fontWeight: 700, fontSize: '18px' }}><span>Total a pagar</span><span>{money(quote.total)}</span></div>
+            <span style={{ color: 'var(--mut)' }}>
+              {paymentMethod === 'domiciliado'
+                ? `Renovación domiciliada cada ${months} ${months === 1 ? 'mes' : 'meses'}`
+                : paymentMethod === 'oxxo' ? 'Pago único en OXXO' : 'Pago único con tarjeta · un mes'}
+            </span>
+          </div>
+        </section>
+
+        {formError && <p role="alert" style={{ color: '#b42318', fontSize: '14px' }}>{formError}</p>}
+
+        <div role="note" style={{ borderRadius: '10px', padding: '14px', background: 'rgba(255,190,46,0.14)', color: 'var(--ink)', fontSize: '13px' }}>
+          La integración con Supabase y la pasarela de pago aún no está conectada. Al continuar solo validaremos el formulario en esta pantalla: no se creará una cuenta, no se cobrará y no se enviarán ni guardarán tus datos.
+        </div>
+
+        <button type="submit" style={{ width: '100%', background: 'var(--coal)', color: '#fff', padding: '14px', borderRadius: '8px', fontWeight: 600, fontSize: '16px' }}>
+          Validar datos y continuar
+        </button>
+      </form>
+    </div>
+  );
+}
+</file>
+
+<file path="src/products/stockia/components/suscripcion/SeccionSuscripcion.tsx">
+// src/components/suscripcion/SeccionSuscripcion.tsx
+import { useState } from 'react';
+import SelectorPlanes from './SelectorPlanes';
+import FormularioSuscripcion from './FormularioSuscripcion';
+import { stockiaPlans } from '../../subscription';
+import type { SubscriptionPlan } from '../../subscription';
+import type { PaymentMethod } from './FormularioSuscripcion';
+
+interface SeccionSuscripcionProps {
+  alContinuar: (metodo: PaymentMethod) => void;
 }
 
-a { text-decoration: none; color: inherit; }
-button { font-family: inherit; cursor: pointer; border: none; background: none; }
-ul { list-style: none; }
+export default function SeccionSuscripcion({ alContinuar }: SeccionSuscripcionProps) {
+  const [planSeleccionado, setPlanSeleccionado] = useState<SubscriptionPlan | null>(null);
+  const [mostrarFormulario, setMostrarFormulario] = useState(false);
 
-/* Utilities */
-.glass {
-  background: var(--glass);
-  border: 1px solid var(--glass-brd);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  const planes = stockiaPlans;
+
+  const manejarSuscripcion = (plan: SubscriptionPlan) => {
+    setPlanSeleccionado(plan);
+    setMostrarFormulario(true);
+  };
+
+  return (
+    <div className="mt-24 text-center sm:mt-[120px]" id="seccion-suscripcion">
+      <h2 className="mb-4 text-4xl sm:text-5xl">Elige tu plan ideal</h2>
+      <p className="mb-10 text-lg text-[var(--mut)] sm:mb-12">
+        Selecciona la opción que mejor se adapte a las necesidades de tu negocio.
+      </p>
+
+      {mostrarFormulario && planSeleccionado ? (
+        <FormularioSuscripcion
+          plan={planSeleccionado}
+          planes={planes}
+          alVolver={() => setMostrarFormulario(false)}
+          alCompletar={alContinuar}
+          alCambiarPlan={setPlanSeleccionado}
+        />
+      ) : (
+        <SelectorPlanes planes={planes} alSuscribir={manejarSuscripcion} />
+      )}
+    </div>
+  );
+}
+</file>
+
+<file path="src/products/stockia/components/suscripcion/SelectorPlanes.tsx">
+// src/components/suscripcion/SelectorPlanes.tsx
+import { ic } from '../../../../utils/icons';
+import { Button } from '../../../../components/UI';
+import type { SubscriptionPlan } from '../../subscription';
+
+interface SelectorPlanesProps {
+  planes: SubscriptionPlan[];
+  alSuscribir: (plan: SubscriptionPlan) => void;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+export default function SelectorPlanes({ planes, alSuscribir }: SelectorPlanesProps) {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', width: '100%' }}>
+      {planes.map(plan => (
+        <div key={plan.code} className="glass" style={{ borderRadius: '24px', padding: '32px', display: 'flex', flexDirection: 'column', transition: 'all 0.3s' }}>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--ink)' }}>{plan.name}</h3>
+          <div style={{ fontSize: '3rem', fontFamily: 'var(--font-heading)', color: 'var(--ink)', lineHeight: 1, marginBottom: '24px' }}>
+            ${plan.monthlyPrice}
+            <span style={{ fontSize: '1rem', color: 'var(--mut)', fontFamily: 'var(--font-body)', fontWeight: 400 }}> /mes</span>
+          </div>
+          
+          <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px', flex: 1 }}>
+            {plan.features.map(feature => (
+              <li key={feature} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '14px', color: 'var(--ink)' }}>
+                <span style={{ color: 'var(--ok)', marginTop: '2px' }}>{ic('check', 16)}</span> 
+                {feature}
+              </li>
+            ))}
+          </ul>
+          
+          <Button variant="dark" style={{ width: '100%', justifyContent: 'center' }} onClick={() => alSuscribir(plan)}>
+            Elegir {plan.name}
+          </Button>
+        </div>
+      ))}
+    </div>
+  );
 }
-.reveal.in {
-  opacity: 1;
-  transform: translateY(0);
+</file>
+
+<file path="src/products/stockia/subscription.ts">
+export type SubscriptionDuration = 1 | 3 | 6 | 12;
+export type StockiaPlanCode = 'BASICO' | 'ESTANDAR' | 'PLUS';
+
+export interface SubscriptionPlan {
+  code: StockiaPlanCode;
+  name: string;
+  monthlyPrice: number;
+  features: string[];
+  discounts: Record<SubscriptionDuration, number>;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; animation: none !important; }
+export const stockiaPlans: SubscriptionPlan[] = [
+  {
+    code: 'BASICO',
+    name: 'Básico',
+    monthlyPrice: 300,
+    discounts: { 1: 0, 3: 25, 6: 50, 12: 150 },
+    features: [
+      '2 dispositivos',
+      'Hasta 4 usuarios',
+      'Operación local'
+    ]
+  },
+  {
+    code: 'ESTANDAR',
+    name: 'Estándar',
+    monthlyPrice: 400,
+    discounts: { 1: 0, 3: 30, 6: 60, 12: 200 },
+    features: [
+      'Hasta 5 dispositivos',
+      'Hasta 4 usuarios',
+      'Sincronización en la nube'
+    ]
+  },
+  {
+    code: 'PLUS',
+    name: 'Plus',
+    monthlyPrice: 500,
+    discounts: { 1: 0, 3: 50, 6: 100, 12: 300 },
+    features: [
+      'Hasta 6 dispositivos',
+      'Hasta 8 usuarios',
+      'Sincronización en la nube'
+    ]
+  }
+];
+
+export function getStockiaQuote(plan: SubscriptionPlan, months: SubscriptionDuration) {
+  const subtotal = plan.monthlyPrice * months;
+  const discount = plan.discounts[months];
+
+  return {
+    subtotal,
+    discount,
+    total: subtotal - discount
+  };
+}
+</file>
+
+<file path="src/products/subscriptionRegistry.ts">
+import type { ComponentType } from 'react';
+import type { Product } from '../types';
+import StockiaSubscriptionSection from './stockia/components/suscripcion/SeccionSuscripcion';
+import type { PaymentMethod } from './stockia/components/suscripcion/FormularioSuscripcion';
+
+export interface ProductSubscriptionProps {
+  alContinuar: (metodo: PaymentMethod) => void;
 }
 
-/* Base Layout */
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+export const subscriptionSections: Partial<Record<Product['id'], ComponentType<ProductSubscriptionProps>>> = {
+  stockia: StockiaSubscriptionSection
+};
 </file>
 
 <file path="src/styles/tokens.css">
@@ -670,456 +1060,6 @@ export function ic(name: IconName, size = 24, color = 'currentColor') {
     </svg>
   );
 }
-</file>
-
-<file path="src/views/Account.tsx">
-// src/views/Account.tsx
-import { useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { useAppContext } from '../context/AppContext';
-import { products } from '../data/products';
-import { Badge, Button } from '../components/UI';
-import { ic } from '../utils/icons';
-import { useReveal } from '../hooks/useReveal';
-
-export const Account = () => {
-  const { loggedIn, user, subs, invoices, logout, addToast } = useAppContext();
-  const navigate = useNavigate();
-  useReveal();
-
-  useEffect(() => {
-    if (!loggedIn) {
-      addToast('Debes iniciar sesión para ver tu cuenta', 'warn');
-      navigate('/');
-    }
-  }, [loggedIn, navigate, addToast]);
-
-  if (!loggedIn || !user) return null;
-
-  const handleProx = () => addToast('Próximamente disponible', 'warn');
-
-  return (
-    <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 48 }}>
-        <div>
-          <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
-            {ic('arrowL', 16)} Volver al inicio
-          </Link>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 20 }}>
-            <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--accent)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 700 }}>
-              {user.initials}
-            </div>
-            <div>
-              <h1 style={{ fontSize: '2rem', margin: 0 }}>Hola, {user.name.split(' ')[0]}</h1>
-              <p style={{ color: 'var(--mut)' }}>{user.email} · {user.plan}</p>
-            </div>
-          </div>
-        </div>
-        <Button variant="glass" onClick={logout}>{ic('logout', 16)} Cerrar sesión</Button>
-      </div>
-
-      {/* Summary Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24, marginBottom: 48 }}>
-        {[
-          { i: 'shield', l: 'Plan de cuenta', v: user.plan },
-          { i: 'box', l: 'Productos activos', v: `${subs.length} de ${products.length}` },
-          { i: 'calendar', l: 'Próxima renovación', v: '30 nov 2025' },
-          { i: 'creditCard', l: 'Consumo mensual', v: '$112.00' }
-        ].map((c, i) => (
-          <div key={i} className="glass reveal" style={{ padding: 20, borderRadius: 16, display: 'flex', gap: 16, alignItems: 'center' }}>
-            <div style={{ color: 'var(--accent)' }}>{ic(c.i as any, 24)}</div>
-            <div>
-              <div style={{ fontSize: 13, color: 'var(--mut)' }}>{c.l}</div>
-              <div style={{ fontWeight: 600, fontSize: 16 }}>{c.v}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Subscriptions */}
-      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Productos contratados</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: 24, marginBottom: 64 }}>
-        {subs.map((s, i) => {
-          const p = products.find(x => x.id === s.pid)!;
-          return (
-            <div key={i} className="glass reveal" style={{ borderRadius: 20, overflow: 'hidden' }}>
-              <div style={{ padding: 24, borderBottom: '1px solid var(--line)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
-                  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-                    <Badge text={p.badge} color={p.color} />
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: 18 }}>{p.name}</div>
-                      <div style={{ fontSize: 13, color: 'var(--mut)' }}>{p.tag}</div>
-                    </div>
-                  </div>
-                  <div style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '4px 12px', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>Activo</div>
-                </div>
-                <div style={{ fontSize: 13, color: 'var(--mut)', marginBottom: 8 }}>Uso de licencias: {s.users} ({s.upct}%)</div>
-                <div style={{ height: 4, background: 'rgba(0,0,0,0.05)', borderRadius: 2, overflow: 'hidden' }}>
-                  <div style={{ width: `${s.upct}%`, height: '100%', background: p.color }} />
-                </div>
-              </div>
-              <div style={{ padding: 24, background: 'rgba(255,255,255,0.3)', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, fontSize: 13 }}>
-                <div><div style={{ color: 'var(--mut)' }}>ID Suscripción</div><div style={{ fontWeight: 500 }}>{s.sid}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Versión</div><div style={{ fontWeight: 500 }}>v{s.ver}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Renovación</div><div style={{ fontWeight: 500 }}>{s.renewal}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Uptime</div><div style={{ fontWeight: 500 }}>{s.uptime}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Llamadas API</div><div style={{ fontWeight: 500 }}>{s.api}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Último backup</div><div style={{ fontWeight: 500 }}>{s.backup}</div></div>
-              </div>
-              <div style={{ padding: 16, borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: 13, color: 'var(--mut)' }}>{s.plan} · Cliente desde {s.since}</div>
-                <Button variant="dark" to={`/producto/${p.id}`}>Abrir producto →</Button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Invoices */}
-      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Facturación reciente</h2>
-      <div className="glass reveal" style={{ borderRadius: 16, overflow: 'hidden', marginBottom: 64 }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-          <thead style={{ background: 'rgba(0,0,0,0.03)' }}>
-            <tr>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Fecha</th>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Concepto</th>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Estado</th>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14, textAlign: 'right' }}>Importe</th>
-              <th style={{ padding: '16px 24px' }}></th>
-            </tr>
-          </thead>
-          <tbody>
-            {invoices.map((inv, i) => (
-              <tr key={i} style={{ borderTop: '1px solid var(--line)' }}>
-                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.date}</td>
-                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.concept}</td>
-                <td style={{ padding: '16px 24px' }}><span style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '2px 8px', borderRadius: 4, fontSize: 12 }}>{inv.status}</span></td>
-                <td style={{ padding: '16px 24px', fontSize: 14, fontWeight: 600, textAlign: 'right' }}>{inv.amount}</td>
-                <td style={{ padding: '16px 24px', textAlign: 'right' }}><button onClick={handleProx} style={{ color: 'var(--mut)' }}>{ic('download', 18)}</button></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
-</file>
-
-<file path="src/views/Home.tsx">
-// src/views/Home.tsx
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { products, platformSlide } from '../data/products';
-import { useAppContext } from '../context/AppContext';
-import { Brand, Badge, Button } from '../components/UI';
-import { SessionButton } from '../components/SessionButton';
-import { ic } from '../utils/icons';
-import { useReveal } from '../hooks/useReveal';
-import { Modal } from '../components/Modal';
-
-export const Home = () => {
-  useReveal();
-  const navigate = useNavigate();
-  const { addToast } = useAppContext();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
-  const [showCallModal, setShowCallModal] = useState(false);
-  
-  const slides = [platformSlide, ...products];
-
-  // Carousel logic
-  useEffect(() => {
-    if (isHovering) return;
-    const timer = setInterval(() => {
-      setActiveIndex(prev => (prev + 1) % slides.length);
-    }, 5200);
-    return () => clearInterval(timer);
-  }, [isHovering, slides.length]);
-
-  const handleCardClick = (idx: number) => {
-    const slide = slides[idx];
-    if (slide.id === 'plat') {
-      document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      const prod = slide as typeof products[0];
-      if (prod.enabled) {
-        navigate(`/producto/${prod.id}`);
-      } else {
-        addToast('Disponible próximamente', 'warn');
-      }
-    }
-  };
-
-  return (
-    <div>
-      <section style={{ height: '100svh', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }} onMouseEnter={() => setIsHovering(true)} onMouseLeave={() => setIsHovering(false)}>
-        {/* Backgrounds */}
-        {slides.map((s, i) => (
-          <div key={s.id} style={{ position: 'absolute', inset: 0, opacity: activeIndex === i ? 1 : 0, transition: 'opacity 1s ease', zIndex: 0 }}>
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(160deg, var(--hero), var(--hero-d))', mixBlendMode: 'multiply' }} />
-            <img src={s.img} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: activeIndex === i ? 'scale(1)' : 'scale(1.07)', transition: 'transform 7.5s ease-out' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(21,52,84,0.9), rgba(21,52,84,0.3))' }} />
-          </div>
-        ))}
-
-        {/* Top bar */}
-        <div style={{ position: 'relative', zIndex: 10, display: 'flex', justifyContent: 'space-between', padding: '24px 40px' }}>
-          <Brand cream />
-          <SessionButton />
-        </div>
-
-        {/* Hero Content */}
-        <div style={{ position: 'relative', zIndex: 10, flex: 1, display: 'flex', alignItems: 'center', padding: '0 40px' }}>
-          <div style={{ maxWidth: 640 }}>
-            <h1 style={{ color: 'var(--cream)', fontSize: '4rem', marginBottom: 20 }} dangerouslySetInnerHTML={{ __html: slides[activeIndex].heroT }} />
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.25rem', marginBottom: 40, lineHeight: 1.5 }}>
-              {slides[activeIndex].heroS}
-            </p>
-            <div style={{ display: 'flex', gap: 16 }}>
-              {slides[activeIndex].id === 'plat' ? (
-                <>
-                  <Button variant="cream" onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}>Descubrir productos</Button>
-                  <Button variant="ghost-dark" onClick={() => setShowCallModal(true)}>Agendar llamada</Button>
-                </>
-              ) : (
-                <Button variant="cream" onClick={() => handleCardClick(activeIndex)}>Ver producto →</Button>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Cards */}
-        <div style={{ position: 'relative', zIndex: 10, padding: '24px 40px', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
-          {slides.map((s, i) => {
-            const isActive = activeIndex === i;
-            return (
-              <div key={s.id} onClick={() => handleCardClick(i)} onMouseEnter={() => setActiveIndex(i)} style={{ background: isActive ? 'var(--cream)' : 'rgba(14,38,62,0.46)', backdropFilter: 'blur(10px)', borderRadius: 16, cursor: 'pointer', transition: 'all 0.3s', overflow: 'hidden', color: isActive ? 'var(--ink)' : 'var(--cream)', border: isActive ? '1px solid transparent' : '1px solid rgba(255,255,255,0.1)' }}>
-                <div style={{ height: 58, overflow: 'hidden' }}>
-                  <img src={s.thumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: isActive ? 'none' : 'grayscale(100%) opacity(0.6)' }} />
-                </div>
-                <div style={{ padding: '12px 16px' }}>
-                  <div style={{ fontWeight: 600, fontSize: 15, fontFamily: 'var(--font-heading)' }}>{s.name}</div>
-                  <div style={{ fontSize: 12, opacity: isActive ? 0.7 : 0.5, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{s.id === 'plat' ? s.sub : (s as any).tag}</div>
-                </div>
-                {/* Progress bar */}
-                <div style={{ height: 3, background: 'rgba(0,0,0,0.1)', width: '100%' }}>
-                  <div style={{ height: '100%', background: s.id === 'plat' ? 'var(--accent)' : (s as any).color, width: isActive && !isHovering ? '100%' : '0%', transition: isActive && !isHovering ? 'width 5.2s linear' : 'none' }} />
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Products Section */}
-      <section id="productos" className="container" style={{ padding: '100px 24px' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: 64 }}>
-          <span style={{ color: 'var(--accent)', fontWeight: 700, fontSize: 13, letterSpacing: 1.5 }}>PRODUCTOS</span>
-          <h2 style={{ fontSize: '3rem', margin: '16px 0' }}>Una suite. Cuatro formas de ganar tiempo.</h2>
-          <p style={{ color: 'var(--mut)', fontSize: '1.2rem', maxWidth: 600, margin: '0 auto' }}>Cada herramienta está diseñada para resolver un problema específico de tu negocio. Úsalas por separado o combínalas.</p>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
-          {products.map((p, i) => (
-            <div key={p.id} className="glass reveal" style={{ borderRadius: 24, overflow: 'hidden', cursor: p.enabled ? 'pointer' : 'default', transitionDelay: `${i * 70}ms` }} onClick={() => p.enabled ? navigate(`/producto/${p.id}`) : addToast('Disponible próximamente', 'warn')}>
-              <div style={{ height: 200, overflow: 'hidden' }}>
-                <img src={p.thumb} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} className="zoom-on-hover" />
-              </div>
-              <div style={{ padding: 24 }}>
-                <Badge text={p.badge} color={p.color} />
-                <h3 style={{ fontSize: '1.8rem', marginTop: 16 }}>{p.name}</h3>
-                <p style={{ color: 'var(--mut)', fontSize: 14, marginBottom: 16 }}>{p.tag}</p>
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
-                  {p.bullets.map((b, bi) => (
-                    <li key={bi} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 14, color: 'var(--ink)' }}>
-                      <span style={{ color: p.color }}>{ic('check', 16)}</span> {b}
-                    </li>
-                  ))}
-                </ul>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid var(--line)', paddingTop: 16 }}>
-                  
-                  <span style={{ color: p.color, fontWeight: 600, fontSize: 14 }}>{p.enabled ? 'Ver producto →' : 'Próximamente'}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <Modal isOpen={showCallModal} onClose={() => setShowCallModal(false)} title="Agenda una llamada">
-        <form onSubmit={(e) => { e.preventDefault(); addToast('Te contactaremos en menos de 24 horas', 'success'); setShowCallModal(false); }} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-          <input required type="text" placeholder="Nombre completo" style={{ padding: 12, borderRadius: 8, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }} />
-          <input required type="email" placeholder="Email de trabajo" style={{ padding: 12, borderRadius: 8, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }} />
-          <Button variant="blue" type="submit" style={{ justifyContent: 'center', marginTop: 8 }}>Solicitar llamada</Button>
-        </form>
-      </Modal>
-
-      <style>{`.zoom-on-hover:hover { transform: scale(1.05); }`}</style>
-    </div>
-  );
-};
-</file>
-
-<file path="src/views/ProductDetail.tsx">
-// src/views/ProductDetail.tsx
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import { products } from '../data/products';
-import { useAppContext } from '../context/AppContext';
-import { Badge, Button } from '../components/UI';
-import { ic } from '../utils/icons';
-import { useReveal } from '../hooks/useReveal';
-import { Modal } from '../components/Modal';
-
-export const ProductDetail = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const { loggedIn, subs, addToast } = useAppContext();
-  const p = products.find(x => x.id === id);
-  useReveal();
-
-  const [showSubModal, setShowSubModal] = useState(false);
-
-  useEffect(() => {
-    if (!p) navigate('/');
-    else window.scrollTo(0, 0);
-  }, [p, navigate]);
-
-  if (!p) return null;
-
-  const isSubbed = loggedIn && subs.some(s => s.pid === p.id);
-  const nextIdx = (products.findIndex(x => x.id === p.id) + 1) % products.length;
-  const nextP = products[nextIdx];
-
-  return (
-    <div style={{ '--pc': p.color, '--prgb': p.rgb } as React.CSSProperties}>
-      <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
-        <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 40 }}>
-          {ic('arrowL', 16)} Todos los productos
-        </Link>
-
-        {/* Hero Section */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-          <div className="reveal">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-              <Badge text={p.badge} color={p.color} />
-              <span style={{ fontWeight: 600, fontSize: 18 }}>{p.name}</span>
-              <span style={{ color: 'var(--mut)' }}>·</span>
-              <span style={{ color: 'var(--mut)' }}>{p.tag}</span>
-            </div>
-            <h1 style={{ fontSize: '3.5rem', marginBottom: 24 }}>{p.heroT}</h1>
-            <p style={{ fontSize: '1.2rem', color: 'var(--mut)', marginBottom: 40 }}>{p.heroS}</p>
-            <div style={{ display: 'flex', gap: 16 }}>
-              {isSubbed ? (
-                <Button variant="dark" to="/cuenta">Gestionar suscripción</Button>
-              ) : (
-                <Button variant="dark" onClick={() => setShowSubModal(true)}>Empezar ahora</Button>
-              )}
-            </div>
-          </div>
-          
-          <div className="reveal" style={{ animation: 'float 7s ease-in-out infinite alternate', position: 'relative' }}>
-            <div style={{ position: 'absolute', inset: -20, background: `radial-gradient(circle, rgba(var(--prgb),0.2) 0%, transparent 70%)`, zIndex: -1 }} />
-            <div style={{ background: '#fff', borderRadius: 16, overflow: 'hidden', boxShadow: '0 25px 50px rgba(0,0,0,0.1)', border: '1px solid var(--line)', height: 400 }}>
-              <div style={{ background: '#f8f9fa', padding: '12px 16px', display: 'flex', gap: 8, borderBottom: '1px solid var(--line)' }}>
-                <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ff5f56' }} />
-                <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#ffbd2e' }} />
-                <div style={{ width: 12, height: 12, borderRadius: '50%', background: '#27c93f' }} />
-              </div>
-              <div style={{ display: 'flex', height: 'calc(100% - 41px)' }}>
-                <div style={{ width: 120, borderRight: '1px solid var(--line)', padding: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                  {p.mock.side.map((item, i) => (
-                    <div key={i} style={{ fontSize: 13, color: i === 1 ? 'var(--pc)' : 'var(--mut)', fontWeight: i === 1 ? 600 : 400 }}>{item}</div>
-                  ))}
-                </div>
-                <div style={{ flex: 1, padding: 24, background: `rgba(var(--prgb), 0.03)` }}>
-                  <div style={{ width: '40%', height: 24, background: 'rgba(0,0,0,0.05)', borderRadius: 4, marginBottom: 24 }} />
-                  <div style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
-                     <div style={{ flex: 1, height: 80, background: '#fff', borderRadius: 8, border: '1px solid var(--line)' }} />
-                     <div style={{ flex: 1, height: 80, background: '#fff', borderRadius: 8, border: '1px solid var(--line)' }} />
-                  </div>
-                  <div style={{ height: 140, background: '#fff', borderRadius: 8, border: '1px solid var(--line)' }} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Detailed Features (Zig-Zag) */}
-        <div style={{ marginTop: 120 }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: 60, textAlign: 'center' }}>Todo lo que incluye</h2>
-          
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 80 }}>
-            {p.detailedFeats.map((feat, i) => (
-              <div key={i} className="zig-zag-row reveal" style={{ display: 'flex', flexDirection: i % 2 === 0 ? 'row' : 'row-reverse', gap: 48, alignItems: 'center' }}>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ fontSize: '1.8rem', marginBottom: 16, color: 'var(--ink)' }}>{feat.t}</h3>
-                  <p style={{ color: 'var(--mut)', fontSize: '1.1rem', lineHeight: 1.6 }}>{feat.d}</p>
-                </div>
-                <div style={{ flex: 1 }}>
-                  <img src={feat.img} alt={feat.t} style={{ width: '100%', borderRadius: 24, boxShadow: '0 20px 40px rgba(0,0,0,0.1)', objectFit: 'cover', aspectRatio: '4/3' }} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Pricing */}
-        <div style={{ marginTop: 120, textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: 40 }}>Un precio simple, todo incluido.</h2>
-          
-          <div className="glass reveal" style={{ maxWidth: 800, margin: '0 auto', borderRadius: 24, padding: 40, textAlign: 'left', display: 'flex', gap: 40, alignItems: 'center' }}>
-            <div style={{ flex: 1, borderRight: '1px solid var(--line)', paddingRight: 40 }}>
-              <div style={{ fontSize: '4rem', fontFamily: 'var(--font-heading)', color: 'var(--ink)', lineHeight: 1 }}>
-                ${p.monthly}
-              </div>
-              <div style={{ color: 'var(--mut)', marginTop: 8 }}>MXN / mes</div>
-            </div>
-            <div style={{ flex: 1 }}>
-              <ul style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
-                {['Módulos completos', 'Usuarios y sucursales ilimitadas', 'Soporte técnico', 'Sin plazos forzosos'].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 8 }}><span style={{ color: 'var(--ok)' }}>{ic('check', 16)}</span> {item}</li>
-                ))}
-              </ul>
-              <Button variant="dark" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setShowSubModal(true)}>
-                Suscribirme ahora
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Next Product Banner */}
-        <div style={{ marginTop: 120 }}>
-          <div onClick={() => { if(nextP.enabled) navigate(`/producto/${nextP.id}`); else addToast('Próximamente', 'warn'); }} className="glass" style={{ padding: 40, borderRadius: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', transition: 'all 0.3s' }}>
-            <div>
-              <div style={{ color: 'var(--mut)', fontSize: 14, marginBottom: 8 }}>Siguiente producto</div>
-              <div style={{ fontSize: 24, fontWeight: 700, color: nextP.color }}>{nextP.name}</div>
-            </div>
-            <div style={{ color: nextP.color }}>{ic('arrowR', 32)}</div>
-          </div>
-        </div>
-      </div>
-
-      <Modal isOpen={showSubModal} onClose={() => setShowSubModal(false)} title={`Suscribirse a ${p.name}`}>
-        <form onSubmit={e => { e.preventDefault(); addToast(`¡Suscripción a ${p.name} activada!`, 'success'); setShowSubModal(false); navigate('/cuenta'); }} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-           <p style={{ color: 'var(--mut)' }}>Plan mensual — ${p.monthly} MXN/mes</p>
-           <input required type="email" placeholder="Tu correo electrónico" style={{ padding: 12, borderRadius: 8, border: 'none', background: 'rgba(255,255,255,0.1)', color: '#fff' }} />
-           <Button variant="blue" type="submit" style={{ justifyContent: 'center' }}>Continuar al pago</Button>
-        </form>
-      </Modal>
-
-      <style>{`
-        @keyframes float { 0% { transform: translateY(0px); } 100% { transform: translateY(-20px); } }
-        @media (max-width: 768px) {
-          .zig-zag-row { flex-direction: column !important; text-align: center; }
-          .zig-zag-row > div { width: 100%; }
-        }
-      `}</style>
-    </div>
-  );
-};
 </file>
 
 <file path="src/App.css">
@@ -1337,120 +1277,6 @@ export const App = () => {
 };
 </file>
 
-<file path="src/index.css">
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
-
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
-}
-</file>
-
 <file path="src/main.tsx">
 // src/main.tsx
 import React from 'react';
@@ -1474,33 +1300,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 <file path="src/vite-env.d.ts">
 // src/vite-env.d.ts
 /// <reference types="vite/client" />
-</file>
-
-<file path=".gitignore">
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
 </file>
 
 <file path="eslint.config.js">
@@ -1545,33 +1344,6 @@ export default defineConfig([
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-</file>
-
-<file path="package.json">
-{
-  "name": "ahorra-tiempo",
-  "private": true,
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.1",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0"
-  }
-}
 </file>
 
 <file path="README.md">
@@ -1707,14 +1479,928 @@ export default defineConfig([
 }
 </file>
 
+<file path="src/components/Footer.tsx">
+import { Link } from 'react-router-dom';
+import { Brand } from './UI';
+import { useAppContext } from '../context/AppContext';
+
+const products = [
+  { id: 'stockia', name: 'MiTienda', available: true },
+  { id: 'citalis', name: 'Citalis', available: false },
+  { id: 'turnia', name: 'Turnia', available: false },
+  { id: 'mesa', name: 'Mesa', available: false }
+];
+
+const futureProjects = ['PredicaMap', 'Asamblea-GT-JW'];
+
+export const Footer = () => {
+  const { addToast } = useAppContext();
+
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        <div className="site-footer__grid">
+          <div className="site-footer__brand">
+            <Brand cream />
+            <p>Herramientas digitales para que los negocios trabajen mejor y recuperes tu tiempo.</p>
+          </div>
+
+          <nav aria-label="Productos" className="site-footer__group">
+            <h2>Productos</h2>
+            <ul>
+              {products.map(product => (
+                <li key={product.id}>
+                  <Link to={`/producto/${product.id}`}>
+                    {product.name}
+                    {!product.available && <span className="site-footer__status">Próximamente</span>}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="site-footer__group">
+            <h2>En camino</h2>
+            <ul>
+              {futureProjects.map(project => (
+                <li key={project}>
+                  <button
+                    type="button"
+                    onClick={() => addToast(`${project} estará disponible próximamente.`, 'info')}
+                  >
+                    {project}
+                    <span className="site-footer__status">Próximamente</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="site-footer__group site-footer__contact">
+            <h2>Contacto</h2>
+            <p>Pronto compartiremos nuestros canales de atención.</p>
+          </div>
+        </div>
+
+        <div className="site-footer__bottom">
+          <span>© 2026 Ahorra Tiempo</span>
+          <span>Hecho para ayudarte a aprovechar mejor tu tiempo.</span>
+        </div>
+      </div>
+    </footer>
+  );
+};
+</file>
+
+<file path="src/styles/global.css">
+/* src/styles/global.css */
+@import "tailwindcss";
+@import './tokens.css';
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: 
+    radial-gradient(circle at 90% 10%, rgba(90,170,230,.16) 0%, transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(180,170,160,.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(200,190,180,.3) 0%, transparent 40%),
+    linear-gradient(to bottom, #f7f1e6, #f0e9da);
+  background-attachment: fixed;
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+/* Utilities */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-brd);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-footer {
+  margin-top: clamp(64px, 9vw, 112px);
+  border-top: 3px solid var(--accent);
+  background: linear-gradient(145deg, #202936, #151b24);
+  color: var(--cream);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.6fr) repeat(3, minmax(150px, 1fr));
+  gap: clamp(28px, 5vw, 64px);
+  padding-block: clamp(44px, 7vw, 76px);
+}
+
+.site-footer__brand p,
+.site-footer__contact p {
+  max-width: 320px;
+  margin-top: 16px;
+  color: rgba(245, 241, 232, 0.68);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.site-footer__group h2 {
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-footer__group ul {
+  display: grid;
+  gap: 12px;
+  color: rgba(245, 241, 232, 0.7);
+  font-size: 14px;
+}
+
+.site-footer__group a,
+.site-footer__group button {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  transition: color 0.2s ease;
+}
+
+.site-footer__group a:hover,
+.site-footer__group button:hover {
+  color: #fff;
+}
+
+.site-footer__status {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  padding: 2px 8px;
+  color: rgba(245, 241, 232, 0.56);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-block: 20px;
+  color: rgba(245, 241, 232, 0.56);
+  font-size: 12px;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Base Layout */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+  }
+}
+</file>
+
+<file path="src/views/Account.tsx">
+// src/views/Account.tsx
+import { useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
+import { products } from '../data/products';
+import { Badge, Button } from '../components/UI';
+import { ic } from '../utils/icons';
+import { useReveal } from '../hooks/useReveal';
+
+export const Account = () => {
+  const { loggedIn, user, subs, invoices, logout, addToast } = useAppContext();
+  const navigate = useNavigate();
+  useReveal();
+
+  useEffect(() => {
+    if (!loggedIn) {
+      addToast('Debes iniciar sesión para ver tu cuenta', 'warn');
+      navigate('/');
+    }
+  }, [loggedIn, navigate, addToast]);
+
+  if (!loggedIn || !user) return null;
+
+  const handleProx = () => addToast('Próximamente disponible', 'warn');
+
+  return (
+    <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
+      <div className="flex flex-wrap items-start justify-between gap-6" style={{ marginBottom: 48 }}>
+        <div>
+          <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
+            {ic('arrowL', 16)} Volver al inicio
+          </Link>
+          <div className="flex items-center gap-4 sm:gap-5">
+            <div style={{ width: 56, height: 56, borderRadius: '50%', background: 'var(--accent)', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, fontWeight: 700 }}>
+              {user.initials}
+            </div>
+            <div>
+              <h1 style={{ fontSize: '2rem', margin: 0 }}>Hola, {user.name.split(' ')[0]}</h1>
+              <p style={{ color: 'var(--mut)' }}>{user.email} · {user.plan}</p>
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <Button variant="glass" onClick={logout}>{ic('logout', 16)} Cerrar sesión</Button>
+        </div>
+      </div>
+
+      {/* Summary Cards */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 20, marginBottom: 48 }}>
+        {[
+          { i: 'shield', l: 'Plan de cuenta', v: user.plan },
+          { i: 'box', l: 'Productos activos', v: `${subs.length} de ${products.length}` },
+          { i: 'calendar', l: 'Próxima renovación', v: '30 nov 2025' },
+          { i: 'creditCard', l: 'Consumo mensual', v: '$112.00' }
+        ].map((c, i) => (
+          <div key={i} className="glass reveal" style={{ padding: 20, borderRadius: 16, display: 'flex', gap: 16, alignItems: 'center' }}>
+            <div style={{ color: 'var(--accent)' }}>{ic(c.i as any, 24)}</div>
+            <div>
+              <div style={{ fontSize: 13, color: 'var(--mut)' }}>{c.l}</div>
+              <div style={{ fontWeight: 600, fontSize: 16 }}>{c.v}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Subscriptions */}
+      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Productos contratados</h2>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: 24, marginBottom: 64 }}>
+        {subs.map((s, i) => {
+          const p = products.find(x => x.id === s.pid)!;
+          return (
+            <div key={i} className="glass reveal" style={{ borderRadius: 20, overflow: 'hidden' }}>
+              <div style={{ padding: 24, borderBottom: '1px solid var(--line)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
+                  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+                    <Badge text={p.badge} color={p.color} />
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: 18 }}>{p.name}</div>
+                      <div style={{ fontSize: 13, color: 'var(--mut)' }}>{p.tag}</div>
+                    </div>
+                  </div>
+                  <div style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '4px 12px', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>Activo</div>
+                </div>
+                <div style={{ fontSize: 13, color: 'var(--mut)', marginBottom: 8 }}>Uso de licencias: {s.users} ({s.upct}%)</div>
+                <div style={{ height: 4, background: 'rgba(0,0,0,0.05)', borderRadius: 2, overflow: 'hidden' }}>
+                  <div style={{ width: `${s.upct}%`, height: '100%', background: p.color }} />
+                </div>
+              </div>
+              <div style={{ padding: 24, background: 'rgba(255,255,255,0.3)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 16, fontSize: 13 }}>
+                <div><div style={{ color: 'var(--mut)' }}>ID Suscripción</div><div style={{ fontWeight: 500 }}>{s.sid}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Versión</div><div style={{ fontWeight: 500 }}>v{s.ver}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Renovación</div><div style={{ fontWeight: 500 }}>{s.renewal}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Uptime</div><div style={{ fontWeight: 500 }}>{s.uptime}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Llamadas API</div><div style={{ fontWeight: 500 }}>{s.api}</div></div>
+                <div><div style={{ color: 'var(--mut)' }}>Último backup</div><div style={{ fontWeight: 500 }}>{s.backup}</div></div>
+              </div>
+              <div style={{ padding: 16, borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ fontSize: 13, color: 'var(--mut)' }}>{s.plan} · Cliente desde {s.since}</div>
+                <Button variant="dark" to={`/producto/${p.id}`}>Abrir producto →</Button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Invoices */}
+      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Facturación reciente</h2>
+      <div className="glass reveal" style={{ borderRadius: 16, overflowX: 'auto', marginBottom: 64 }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <thead style={{ background: 'rgba(0,0,0,0.03)' }}>
+            <tr>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Fecha</th>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Concepto</th>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Estado</th>
+              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14, textAlign: 'right' }}>Importe</th>
+              <th style={{ padding: '16px 24px' }}></th>
+            </tr>
+          </thead>
+          <tbody>
+            {invoices.map((inv, i) => (
+              <tr key={i} style={{ borderTop: '1px solid var(--line)' }}>
+                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.date}</td>
+                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.concept}</td>
+                <td style={{ padding: '16px 24px' }}><span style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '2px 8px', borderRadius: 4, fontSize: 12 }}>{inv.status}</span></td>
+                <td style={{ padding: '16px 24px', fontSize: 14, fontWeight: 600, textAlign: 'right' }}>{inv.amount}</td>
+                <td style={{ padding: '16px 24px', textAlign: 'right' }}><button onClick={handleProx} style={{ color: 'var(--mut)' }}>{ic('download', 18)}</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+};
+</file>
+
+<file path="src/views/Home.tsx">
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { products, platformSlide } from '../data/products';
+import { useAppContext } from '../context/AppContext';
+import { Brand, Badge, Button } from '../components/UI';
+import { SessionButton } from '../components/SessionButton';
+import { ic } from '../utils/icons';
+import { useReveal } from '../hooks/useReveal';
+import { Modal } from '../components/Modal';
+import type { Product } from '../types';
+
+const slideProgressColors: Record<Product['id'], string> = {
+  stockia: 'bg-[#0e9f6e]',
+  citalis: 'bg-[#2f9ec4]',
+  turnia: 'bg-[#d97b29]',
+  mesa: 'bg-[#8a5cd6]'
+};
+
+const productTextColors: Record<Product['id'], string> = {
+  stockia: 'text-[#0e9f6e]',
+  citalis: 'text-[#2f9ec4]',
+  turnia: 'text-[#d97b29]',
+  mesa: 'text-[#8a5cd6]'
+};
+
+const revealDelays = ['delay-0', 'delay-75', 'delay-150', 'delay-[225ms]'];
+
+export const Home = () => {
+  useReveal();
+  const navigate = useNavigate();
+  const { addToast } = useAppContext();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const [showCallModal, setShowCallModal] = useState(false);
+
+  const slides = [platformSlide, ...products];
+
+  useEffect(() => {
+    if (isHovering) return;
+    const timer = setInterval(() => {
+      setActiveIndex(prev => (prev + 1) % slides.length);
+    }, 5200);
+    return () => clearInterval(timer);
+  }, [isHovering, slides.length]);
+
+  const handleCardClick = (idx: number) => {
+    const slide = slides[idx];
+    if (slide.id === 'plat') {
+      document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' });
+    } else if (slide.enabled) {
+      navigate(`/producto/${slide.id}`);
+    } else {
+      addToast('Disponible próximamente', 'warn');
+    }
+  };
+
+  return (
+    <div>
+      <section
+        className="relative flex min-h-[min(900px,100svh)] flex-col overflow-hidden md:min-h-[760px]"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {slides.map((slide, i) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 z-0 transition-opacity duration-1000 ease-in-out ${activeIndex === i ? 'opacity-100' : 'opacity-0'}`}
+          >
+            <div className="absolute inset-0 z-10 bg-[linear-gradient(160deg,var(--hero),var(--hero-d))] mix-blend-multiply" />
+            {slide.img ? (
+              <img
+                src={slide.img}
+                alt=""
+                className={`h-full w-full object-cover transition-transform duration-[7500ms] ease-out ${activeIndex === i ? 'scale-100' : 'scale-[1.07]'}`}
+              />
+            ) : (
+              <div
+                aria-hidden="true"
+                className="h-full w-full"
+                style={{ background: `linear-gradient(135deg, ${'color' in slide ? slide.color : '#3d9be3'}, #172335)` }}
+              />
+            )}
+            <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(21,52,84,0.9),rgba(21,52,84,0.3))]" />
+          </div>
+        ))}
+
+        <div className="relative z-10 flex items-center justify-between px-6 py-6 sm:px-12 lg:px-20">
+          <Brand cream />
+          <SessionButton />
+        </div>
+
+        <div className="relative z-10 flex flex-1 items-center px-6 py-10 sm:px-12 lg:px-20">
+          <div className="max-w-3xl rounded-3xl border border-white/10 bg-[#102b46]/45 p-5 shadow-2xl backdrop-blur-[2px] sm:p-8">
+            {slides[activeIndex].heroT ? (
+              <h1
+                className="mb-5 max-w-3xl text-[clamp(2rem,3.6vw,3.75rem)] text-[var(--cream)]"
+                dangerouslySetInnerHTML={{ __html: slides[activeIndex].heroT }}
+              />
+            ) : (
+              <h1 className="mb-5 max-w-3xl text-[clamp(2rem,3.6vw,3.75rem)] text-[var(--cream)]">
+                Próximamente: {slides[activeIndex].name}
+              </h1>
+            )}
+            <p className="mb-8 max-w-2xl text-base leading-relaxed text-white sm:mb-10 sm:text-lg lg:text-xl">
+              {slides[activeIndex].heroS || `Estamos preparando ${slides[activeIndex].name}. Conoce los productos disponibles de la suite.`}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              {slides[activeIndex].id === 'plat' ? (
+                <>
+                  <Button
+                    variant="cream"
+                    onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Descubrir productos
+                  </Button>
+                  <Button variant="ghost-dark" onClick={() => setShowCallModal(true)}>
+                    Agendar llamada
+                  </Button>
+                </>
+              ) : (
+                slides[activeIndex].enabled ? (
+                  <Button variant="cream" onClick={() => handleCardClick(activeIndex)}>
+                    Ver producto →
+                  </Button>
+                ) : (
+                  <Button
+                    variant="cream"
+                    onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
+                  >
+                    Conocer productos
+                  </Button>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 grid grid-cols-2 gap-3 px-6 py-6 sm:gap-4 sm:px-12 lg:px-20 md:grid-cols-5">
+          {slides.map((slide, i) => {
+            const isActive = activeIndex === i;
+            const subtitle = slide.id === 'plat' ? slide.sub : slide.tag;
+            const progressColor = slide.id === 'plat' ? 'bg-[var(--accent)]' : slideProgressColors[slide.id];
+            return (
+              <button
+                type="button"
+                key={slide.id}
+                onClick={() => handleCardClick(i)}
+                onMouseEnter={() => setActiveIndex(i)}
+                className={`cursor-pointer overflow-hidden rounded-2xl border text-left transition-all duration-300 ${
+                  isActive
+                    ? 'border-transparent bg-[var(--cream)] text-[var(--ink)]'
+                    : 'border-white/10 bg-[rgba(14,38,62,0.46)] text-[var(--cream)] backdrop-blur-[10px]'
+                }`}
+              >
+                <div className="h-14 overflow-hidden sm:h-[68px]">
+                  {slide.thumb ? (
+                    <img
+                      src={slide.thumb}
+                      alt=""
+                      className={`h-full w-full object-cover ${isActive ? '' : 'grayscale opacity-60'}`}
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="h-full w-full"
+                      style={{ background: `linear-gradient(135deg, ${'color' in slide ? slide.color : '#3d9be3'}, #172335)` }}
+                    />
+                  )}
+                </div>
+                <div className="px-4 py-3 sm:px-5 sm:py-4">
+                  <div className="truncate font-[var(--font-heading)] text-sm font-semibold sm:text-base">
+                    {slide.name}
+                  </div>
+                  <div className={`truncate text-xs sm:text-[13px] ${isActive ? 'opacity-70' : 'opacity-70'}`}>
+                    {subtitle}
+                  </div>
+                </div>
+                <div className="h-[3px] w-full bg-black/10">
+                  <div
+                    className={`h-full ${
+                      progressColor
+                    } ${isActive && !isHovering ? 'w-full transition-[width] duration-[5200ms] ease-linear' : 'w-0 transition-none'}`}
+                  />
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="productos" className="container py-20 sm:py-24">
+        <div className="reveal mb-12 text-center sm:mb-16">
+          <span className="text-[13px] font-bold tracking-[1.5px] text-[var(--accent)]">PRODUCTOS</span>
+          <h2 className="my-4 text-[clamp(2rem,4vw,3.25rem)]">Una suite. Cuatro formas de ganar tiempo.</h2>
+          <p className="mx-auto max-w-[600px] text-lg text-[var(--mut)] sm:text-xl">
+            Cada herramienta está diseñada para resolver un problema específico de tu negocio. Úsalas por separado o combínalas.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product, i) => (
+            <div
+              key={product.id}
+              className={`reveal overflow-hidden rounded-3xl border border-white/20 bg-white/70 shadow-lg backdrop-blur-md transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/60 ${product.enabled ? 'cursor-pointer' : 'cursor-default'} ${revealDelays[i]}`}
+              onClick={() => product.enabled ? navigate(`/producto/${product.id}`) : addToast('Disponible próximamente', 'warn')}
+              role="link"
+              tabIndex={0}
+              onKeyDown={event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  product.enabled ? navigate(`/producto/${product.id}`) : addToast('Disponible próximamente', 'warn');
+                }
+              }}
+            >
+              <div className="h-44 overflow-hidden">
+                {product.thumb ? (
+                  <img
+                    src={product.thumb}
+                    alt={product.name}
+                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                ) : (
+                  <div
+                    aria-label={`${product.name}, próximamente`}
+                    className="flex h-full flex-col items-center justify-center gap-3 text-white"
+                    style={{ background: `linear-gradient(135deg, ${product.color}, #172335)` }}
+                  >
+                    <Badge text={product.badge} color="rgba(255,255,255,0.2)" />
+                    <span className="text-sm font-medium tracking-wide">Próximamente</span>
+                  </div>
+                )}
+              </div>
+              <div className="p-6">
+                <Badge text={product.badge} color={product.color} />
+                <h3 className="mt-4 text-3xl">{product.name}</h3>
+                <p className="mb-4 text-sm text-[var(--mut)]">{product.tag}</p>
+                <ul className="mb-6 flex flex-col gap-2">
+                  {product.bullets.map((bullet, bulletIndex) => (
+                    <li key={bulletIndex} className="flex items-center gap-2 text-sm text-[var(--ink)]">
+                      <span className={productTextColors[product.id]}>{ic('check', 16)}</span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex items-center justify-between border-t border-[var(--line)] pt-4">
+                  <span className={`text-sm font-semibold ${productTextColors[product.id]}`}>
+                    {product.enabled ? 'Ver producto →' : 'Próximamente'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <Modal isOpen={showCallModal} onClose={() => setShowCallModal(false)} title="Agenda una llamada">
+        <form
+          onSubmit={event => {
+            event.preventDefault();
+            addToast('Te contactaremos en menos de 24 horas', 'success');
+            setShowCallModal(false);
+          }}
+          className="flex flex-col gap-4"
+        >
+          <input
+            required
+            type="text"
+            placeholder="Nombre completo"
+            className="rounded-lg border-0 bg-white/10 p-3 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <input
+            required
+            type="email"
+            placeholder="Email de trabajo"
+            className="rounded-lg border-0 bg-white/10 p-3 text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
+          />
+          <Button variant="blue" type="submit" className="mt-2 justify-center">Solicitar llamada</Button>
+        </form>
+      </Modal>
+    </div>
+  );
+};
+</file>
+
+<file path="src/views/ProductDetail.tsx">
+import { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { products } from '../data/products';
+import { useAppContext } from '../context/AppContext';
+import { Badge, Button } from '../components/UI';
+import { ic } from '../utils/icons';
+import { useReveal } from '../hooks/useReveal';
+import { subscriptionSections } from '../products/subscriptionRegistry';
+import type { Product } from '../types';
+
+const productTheme: Record<Product['id'], { text: string; glow: string; panel: string }> = {
+  stockia: {
+    text: 'text-[#0e9f6e]',
+    glow: 'bg-[radial-gradient(circle,rgba(14,159,110,0.2)_0%,transparent_70%)]',
+    panel: 'bg-[#0e9f6e]/[0.03]'
+  },
+  citalis: {
+    text: 'text-[#2f9ec4]',
+    glow: 'bg-[radial-gradient(circle,rgba(47,158,196,0.2)_0%,transparent_70%)]',
+    panel: 'bg-[#2f9ec4]/[0.03]'
+  },
+  turnia: {
+    text: 'text-[#d97b29]',
+    glow: 'bg-[radial-gradient(circle,rgba(217,123,41,0.2)_0%,transparent_70%)]',
+    panel: 'bg-[#d97b29]/[0.03]'
+  },
+  mesa: {
+    text: 'text-[#8a5cd6]',
+    glow: 'bg-[radial-gradient(circle,rgba(138,92,214,0.2)_0%,transparent_70%)]',
+    panel: 'bg-[#8a5cd6]/[0.03]'
+  }
+};
+
+export const ProductDetail = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { loggedIn, subs, addToast } = useAppContext();
+  const product = products.find(item => item.id === id);
+  useReveal();
+
+  useEffect(() => {
+    if (!product) navigate('/');
+    else window.scrollTo(0, 0);
+  }, [product, navigate]);
+
+  if (!product) return null;
+
+  const isSubbed = loggedIn && subs.some(subscription => subscription.pid === product.id);
+  const nextIdx = (products.findIndex(item => item.id === product.id) + 1) % products.length;
+  const nextProduct = products[nextIdx];
+  const theme = productTheme[product.id];
+  const SubscriptionSection = subscriptionSections[product.id];
+
+  const handleEmpezar = () => {
+    document.getElementById('seccion-suscripcion')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleIntentoDeSuscripcion = (metodo: 'domiciliado' | 'oxxo' | 'tarjeta') => {
+    const metodoTexto = metodo === 'domiciliado'
+      ? 'pago domiciliado'
+      : metodo === 'oxxo' ? 'pago único en OXXO' : 'pago con tarjeta';
+    addToast(`Datos validados. La integración de ${metodoTexto} todavía no está disponible; no se creó una suscripción.`, 'warn');
+  };
+
+  return (
+    <div>
+      <div className="container pb-20 pt-16 sm:pt-20">
+        <Link
+          to="/"
+          className="mb-12 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-white/55 px-4 py-2 text-[var(--mut)] transition-colors hover:text-[var(--ink)]"
+        >
+          {ic('arrowL', 16)} Todos los productos
+        </Link>
+
+        <section className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
+          <div className="reveal">
+            <div className="mb-6 flex flex-wrap items-center gap-3">
+              <Badge text={product.badge} color={product.color} />
+              <span className="text-lg font-semibold">{product.name}</span>
+              <span className="text-[var(--mut)]">·</span>
+              <span className="text-[var(--mut)]">{product.tag}</span>
+            </div>
+            <h1 className="mb-6 text-4xl sm:text-5xl lg:text-6xl">{product.heroT}</h1>
+            <p className="mb-10 text-lg text-[var(--mut)] sm:text-xl">{product.heroS}</p>
+            <div className="flex flex-wrap gap-4">
+              {isSubbed && product.id !== 'stockia' ? (
+                <Button variant="dark" to="/cuenta">Gestionar suscripción</Button>
+              ) : (
+                <>
+                  <Button variant="dark" onClick={handleEmpezar}>
+                    {isSubbed ? 'Contratar otra tienda' : 'Empezar ahora'}
+                  </Button>
+                  {isSubbed && <Button variant="glass" to="/cuenta">Gestionar suscripciones</Button>}
+                </>
+              )}
+            </div>
+          </div>
+
+          <div className="reveal relative animate-[float_7s_ease-in-out_infinite_alternate]">
+            <div className={`absolute -inset-5 z-0 ${theme.glow}`} />
+            <div className="relative z-10 h-[320px] overflow-hidden rounded-2xl border border-[var(--line)] bg-white shadow-[0_25px_50px_rgba(0,0,0,0.1)] sm:h-[400px]">
+              <div className="flex gap-2 border-b border-[var(--line)] bg-[#f8f9fa] px-4 py-3">
+                <div className="h-3 w-3 rounded-full bg-[#ff5f56]" />
+                <div className="h-3 w-3 rounded-full bg-[#ffbd2e]" />
+                <div className="h-3 w-3 rounded-full bg-[#27c93f]" />
+              </div>
+              <div className="flex h-[calc(100%-41px)]">
+                <div className="flex w-[120px] shrink-0 flex-col gap-3 border-r border-[var(--line)] p-3 sm:p-4">
+                  {product.mock.side.map((item, i) => (
+                    <div
+                      key={i}
+                      className={`truncate text-xs sm:text-[13px] ${i === 1 ? `${theme.text} font-semibold` : 'text-[var(--mut)]'}`}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className={`min-w-0 flex-1 p-4 sm:p-6 ${theme.panel}`}>
+                  <div className="mb-6 h-6 w-2/5 rounded bg-black/5" />
+                  <div className="mb-6 flex gap-4">
+                    <div className="h-20 min-w-0 flex-1 rounded-lg border border-[var(--line)] bg-white" />
+                    <div className="h-20 min-w-0 flex-1 rounded-lg border border-[var(--line)] bg-white" />
+                  </div>
+                  <div className="h-[140px] rounded-lg border border-[var(--line)] bg-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-28 sm:mt-36">
+          <h2 className="mb-14 text-center text-4xl sm:mb-16 sm:text-5xl">Todo lo que incluye</h2>
+
+          <div className="flex flex-col gap-16 sm:gap-20">
+            {product.detailedFeats.map((feature, i) => (
+              <div
+                key={i}
+                className={`reveal flex flex-col items-center gap-8 rounded-3xl border border-white/35 bg-white/20 p-5 text-center shadow-sm backdrop-blur-sm sm:p-8 md:gap-12 md:text-left ${
+                  i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                }`}
+              >
+                <div className="w-full min-w-0 flex-1">
+                  <h3 className="mb-4 text-2xl text-[var(--ink)] sm:text-3xl">{feature.t}</h3>
+                  <p className="text-base leading-relaxed text-[var(--mut)] sm:text-lg">{feature.d}</p>
+                </div>
+                <div className="w-full min-w-0 flex-1">
+                  <img
+                    src={feature.img}
+                    alt={feature.t}
+                    className="aspect-[4/3] w-full rounded-3xl object-cover shadow-[0_20px_40px_rgba(0,0,0,0.1)]"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {SubscriptionSection ? (
+          <SubscriptionSection alContinuar={handleIntentoDeSuscripcion} />
+        ) : (
+          <section id="seccion-suscripcion" className="mt-24 text-center sm:mt-[120px]">
+            <h2 className="mb-4 text-4xl">Suscripción próximamente</h2>
+            <p className="text-[var(--mut)]">Este producto todavía no tiene su flujo de contratación configurado.</p>
+          </section>
+        )}
+
+        <section className="mt-24 sm:mt-[120px]">
+          <button
+            type="button"
+            onClick={() => {
+              if (nextProduct.enabled) navigate(`/producto/${nextProduct.id}`);
+              else addToast('Próximamente', 'warn');
+            }}
+            className="flex w-full cursor-pointer items-center justify-between rounded-3xl border border-white/20 bg-white/70 p-6 text-left shadow-lg backdrop-blur-md transition-all hover:shadow-xl dark:border-white/10 dark:bg-slate-900/60 sm:p-10"
+          >
+            <span>
+              <span className="mb-2 block text-sm text-[var(--mut)]">Siguiente producto</span>
+              <span className={`block text-2xl font-bold ${productTheme[nextProduct.id].text}`}>
+                {nextProduct.name}
+              </span>
+            </span>
+            <span className={productTheme[nextProduct.id].text}>{ic('arrowR', 32)}</span>
+          </button>
+        </section>
+      </div>
+    </div>
+  );
+};
+</file>
+
+<file path="src/index.css">
+@import "tailwindcss";
+</file>
+
+<file path=".gitignore">
+Docs
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+</file>
+
+<file path="package.json">
+{
+  "name": "ahorra-tiempo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-react": "^1.52.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
+</file>
+
 <file path="vite.config.ts">
-// vite.config.ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  plugins: [react()],
-});
+  plugins: [react(), tailwindcss()],
+})
 </file>
 
 </files>

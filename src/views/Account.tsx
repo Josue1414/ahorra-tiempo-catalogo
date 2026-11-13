@@ -1,31 +1,88 @@
-// src/views/Account.tsx
-import { useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAppContext } from '../context/AppContext';
-import { products } from '../data/products';
 import { Badge, Button } from '../components/UI';
+import { loadMitiendaDashboard, type MitiendaDashboardResponse } from '../lib/mitiendaDashboard';
 import { ic } from '../utils/icons';
 import { useReveal } from '../hooks/useReveal';
 
+const formatDate = (value: string | null) => {
+  if (!value) return 'Sin fecha';
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? 'Sin fecha' : date.toLocaleDateString('es-MX');
+};
+
+const formatMoney = (value: number) => value.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+
 export const Account = () => {
-  const { loggedIn, user, subs, invoices, logout, addToast } = useAppContext();
+  const { authReady, loggedIn, user, logout, addToast } = useAppContext();
   const navigate = useNavigate();
+  const [dashboard, setDashboard] = useState<MitiendaDashboardResponse | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState('');
   useReveal();
 
   useEffect(() => {
-    if (!loggedIn) {
-      addToast('Debes iniciar sesión para ver tu cuenta', 'warn');
-      navigate('/');
+    if (authReady && !loggedIn) {
+      navigate('/iniciar-sesion', { replace: true, state: { returnTo: '/cuenta' } });
     }
-  }, [loggedIn, navigate, addToast]);
+  }, [authReady, loggedIn, navigate]);
 
-  if (!loggedIn || !user) return null;
+  useEffect(() => {
+    if (!authReady || !loggedIn) return;
+    let active = true;
+    setIsLoading(true);
+    setLoadError('');
 
-  const handleProx = () => addToast('Próximamente disponible', 'warn');
+    void loadMitiendaDashboard()
+      .then(data => {
+        if (active) setDashboard(data);
+      })
+      .catch(error => {
+        if (!active) return;
+        setLoadError(error instanceof Error ? error.message : 'No se pudieron cargar las métricas de MiTienda.');
+      })
+      .finally(() => {
+        if (active) setIsLoading(false);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [authReady, loggedIn]);
+
+  const activeTeamCount = useMemo(
+    () => dashboard?.stores.reduce((total, store) => total + store.activeTeamCount, 0) ?? 0,
+    [dashboard]
+  );
+  const nextExpiration = useMemo(() => {
+    const now = Date.now();
+    return dashboard?.stores
+      .map(store => store.expiresAt)
+      .filter(expiration => new Date(expiration).getTime() >= now)
+      .sort((left, right) => new Date(left).getTime() - new Date(right).getTime())[0] ?? null;
+  }, [dashboard]);
+
+  if (!authReady || !loggedIn || !user) return null;
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/iniciar-sesion', { replace: true });
+    } catch (error) {
+      addToast(error instanceof Error ? error.message : 'No se pudo cerrar la sesión.', 'warn');
+    }
+  };
+
+  const metrics = [
+    { icon: 'box', label: 'Tiendas MiTienda', value: isLoading ? '…' : String(dashboard?.stores.length ?? 0) },
+    { icon: 'users', label: 'Usuarios activos', value: isLoading ? '…' : String(activeTeamCount) },
+    { icon: 'calendar', label: 'Próximo vencimiento', value: isLoading ? '…' : formatDate(nextExpiration) }
+  ] as const;
 
   return (
     <div className="container" style={{ paddingTop: 40, paddingBottom: 80 }}>
-      <div className="flex flex-wrap items-start justify-between gap-6" style={{ marginBottom: 48 }}>
+      <div className="flex flex-wrap items-start justify-between gap-6" style={{ marginBottom: 40 }}>
         <div>
           <Link to="/" style={{ color: 'var(--mut)', display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24 }}>
             {ic('arrowL', 16)} Volver al inicio
@@ -40,95 +97,114 @@ export const Account = () => {
             </div>
           </div>
         </div>
-        <div style={{ display: 'flex', gap: '16px' }}>
-          <Button variant="glass" onClick={logout}>{ic('logout', 16)} Cerrar sesión</Button>
-        </div>
+        <Button variant="glass" onClick={handleLogout}>{ic('logout', 16)} Cerrar sesión</Button>
       </div>
 
-      {/* Summary Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 20, marginBottom: 48 }}>
-        {[
-          { i: 'shield', l: 'Plan de cuenta', v: user.plan },
-          { i: 'box', l: 'Productos activos', v: `${subs.length} de ${products.length}` },
-          { i: 'calendar', l: 'Próxima renovación', v: '30 nov 2025' },
-          { i: 'creditCard', l: 'Consumo mensual', v: '$112.00' }
-        ].map((c, i) => (
-          <div key={i} className="glass reveal" style={{ padding: 20, borderRadius: 16, display: 'flex', gap: 16, alignItems: 'center' }}>
-            <div style={{ color: 'var(--accent)' }}>{ic(c.i as any, 24)}</div>
+      {user.plan === 'Activación pendiente' && (
+        <div role="status" className="mb-8 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          Tu registro está creado, pero MiTienda todavía no termina de activarse. Cierra sesión e inicia de nuevo para reintentar; si el problema continúa, contacta soporte.
+        </div>
+      )}
+
+      {dashboard?.warning && (
+        <div role="status" className="mb-8 rounded-xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          {dashboard.warning}
+        </div>
+      )}
+
+      <div className="mb-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {metrics.map(metric => (
+          <div key={metric.label} className="glass reveal flex items-center gap-4 rounded-2xl p-5">
+            <span style={{ color: 'var(--accent)' }}>{ic(metric.icon, 24)}</span>
             <div>
-              <div style={{ fontSize: 13, color: 'var(--mut)' }}>{c.l}</div>
-              <div style={{ fontWeight: 600, fontSize: 16 }}>{c.v}</div>
+              <div className="text-sm text-[var(--mut)]">{metric.label}</div>
+              <div className="font-semibold">{metric.value}</div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Subscriptions */}
-      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Productos contratados</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: 24, marginBottom: 64 }}>
-        {subs.map((s, i) => {
-          const p = products.find(x => x.id === s.pid)!;
-          return (
-            <div key={i} className="glass reveal" style={{ borderRadius: 20, overflow: 'hidden' }}>
-              <div style={{ padding: 24, borderBottom: '1px solid var(--line)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
-                  <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-                    <Badge text={p.badge} color={p.color} />
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: 18 }}>{p.name}</div>
-                      <div style={{ fontSize: 13, color: 'var(--mut)' }}>{p.tag}</div>
-                    </div>
-                  </div>
-                  <div style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '4px 12px', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>Activo</div>
-                </div>
-                <div style={{ fontSize: 13, color: 'var(--mut)', marginBottom: 8 }}>Uso de licencias: {s.users} ({s.upct}%)</div>
-                <div style={{ height: 4, background: 'rgba(0,0,0,0.05)', borderRadius: 2, overflow: 'hidden' }}>
-                  <div style={{ width: `${s.upct}%`, height: '100%', background: p.color }} />
-                </div>
-              </div>
-              <div style={{ padding: 24, background: 'rgba(255,255,255,0.3)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: 16, fontSize: 13 }}>
-                <div><div style={{ color: 'var(--mut)' }}>ID Suscripción</div><div style={{ fontWeight: 500 }}>{s.sid}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Versión</div><div style={{ fontWeight: 500 }}>v{s.ver}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Renovación</div><div style={{ fontWeight: 500 }}>{s.renewal}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Uptime</div><div style={{ fontWeight: 500 }}>{s.uptime}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Llamadas API</div><div style={{ fontWeight: 500 }}>{s.api}</div></div>
-                <div><div style={{ color: 'var(--mut)' }}>Último backup</div><div style={{ fontWeight: 500 }}>{s.backup}</div></div>
-              </div>
-              <div style={{ padding: 16, borderTop: '1px solid var(--line)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontSize: 13, color: 'var(--mut)' }}>{s.plan} · Cliente desde {s.since}</div>
-                <Button variant="dark" to={`/producto/${p.id}`}>Abrir producto →</Button>
-              </div>
+      <section className="glass reveal rounded-2xl p-6 sm:p-8">
+        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <Badge text="MiTienda" color="#0e9f6e" />
+            <div>
+              <h2 className="text-2xl">Punto de Venta e Inventario</h2>
+              <p className="text-sm text-[var(--mut)]">Suscripciones y tiendas vinculadas a tu cuenta.</p>
             </div>
-          );
-        })}
-      </div>
+          </div>
+          {!isLoading && dashboard?.stores.length ? (
+            <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-900">
+              {dashboard.stores.length} {dashboard.stores.length === 1 ? 'tienda' : 'tiendas'}
+            </span>
+          ) : null}
+        </div>
 
-      {/* Invoices */}
-      <h2 style={{ fontSize: '1.8rem', marginBottom: 24 }}>Facturación reciente</h2>
-      <div className="glass reveal" style={{ borderRadius: 16, overflowX: 'auto', marginBottom: 64 }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-          <thead style={{ background: 'rgba(0,0,0,0.03)' }}>
-            <tr>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Fecha</th>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Concepto</th>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14 }}>Estado</th>
-              <th style={{ padding: '16px 24px', fontWeight: 600, fontSize: 14, textAlign: 'right' }}>Importe</th>
-              <th style={{ padding: '16px 24px' }}></th>
-            </tr>
-          </thead>
-          <tbody>
-            {invoices.map((inv, i) => (
-              <tr key={i} style={{ borderTop: '1px solid var(--line)' }}>
-                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.date}</td>
-                <td style={{ padding: '16px 24px', fontSize: 14 }}>{inv.concept}</td>
-                <td style={{ padding: '16px 24px' }}><span style={{ background: 'rgba(11,122,80,0.1)', color: 'var(--ok)', padding: '2px 8px', borderRadius: 4, fontSize: 12 }}>{inv.status}</span></td>
-                <td style={{ padding: '16px 24px', fontSize: 14, fontWeight: 600, textAlign: 'right' }}>{inv.amount}</td>
-                <td style={{ padding: '16px 24px', textAlign: 'right' }}><button onClick={handleProx} style={{ color: 'var(--mut)' }}>{ic('download', 18)}</button></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+        {isLoading && <p role="status" className="py-5 text-sm text-[var(--mut)]">Cargando tus métricas…</p>}
+        {loadError && <p role="alert" className="rounded-lg bg-red-50 p-4 text-sm text-red-800">{loadError}</p>}
+        {!isLoading && !loadError && !dashboard?.stores.length && (
+          <div className="rounded-xl border border-[var(--line)] bg-white/50 p-5">
+            <p className="mb-4 text-sm text-[var(--mut)]">Aún no hay tiendas MiTienda vinculadas a esta cuenta.</p>
+            <Button variant="dark" to="/producto/stockia">Conocer MiTienda</Button>
+          </div>
+        )}
+
+        {!isLoading && !loadError && Boolean(dashboard?.stores.length) && (
+          <div className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl bg-white/60 p-4">
+              <div className="text-sm text-[var(--mut)]">Tiendas registradas</div>
+              <div className="mt-1 text-xl font-semibold">{dashboard?.stores.length}</div>
+            </div>
+            <div className="rounded-xl bg-white/60 p-4">
+              <div className="text-sm text-[var(--mut)]">Usuarios trabajadores activos</div>
+              <div className="mt-1 text-xl font-semibold">{activeTeamCount}</div>
+            </div>
+            <div className="rounded-xl bg-white/60 p-4">
+              <div className="text-sm text-[var(--mut)]">Próximo vencimiento</div>
+              <div className="mt-1 text-xl font-semibold">{formatDate(nextExpiration)}</div>
+            </div>
+          </div>
+        )}
+
+        <div className="mt-6 flex flex-wrap gap-3">
+          <Button variant="dark" to="/cuenta/producto/stockia">Ir a producto →</Button>
+          <Button variant="glass" to="/producto/stockia">Descripción de producto</Button>
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="mb-5 text-2xl">Pagos recientes</h2>
+        {isLoading && <p role="status" className="text-sm text-[var(--mut)]">Cargando pagos…</p>}
+        {!isLoading && !loadError && !dashboard?.payments.length && (
+          <p className="glass rounded-xl p-5 text-sm text-[var(--mut)]">No hay pagos registrados para tus tiendas.</p>
+        )}
+        {!isLoading && !loadError && Boolean(dashboard?.payments.length) && (
+          <div className="glass overflow-x-auto rounded-2xl">
+            <table className="w-full border-collapse text-left">
+              <thead className="bg-black/[0.03]">
+                <tr>
+                  <th className="px-5 py-4 text-sm font-semibold">Fecha</th>
+                  <th className="px-5 py-4 text-sm font-semibold">Concepto</th>
+                  <th className="px-5 py-4 text-sm font-semibold">Método</th>
+                  <th className="px-5 py-4 text-right text-sm font-semibold">Importe</th>
+                  <th className="px-5 py-4 text-sm font-semibold">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dashboard?.payments.map((payment, index) => (
+                  <tr key={`${payment.suscripcion_id}-${payment.created_at}-${index}`} className="border-t border-[var(--line)]">
+                    <td className="px-5 py-4 text-sm">{formatDate(payment.created_at)}</td>
+                    <td className="px-5 py-4 text-sm">{payment.concepto}</td>
+                    <td className="px-5 py-4 text-sm">{payment.metodo}</td>
+                    <td className="px-5 py-4 text-right text-sm font-semibold">{formatMoney(payment.monto_pagado)}</td>
+                    <td className="px-5 py-4 text-sm">{payment.estado}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
     </div>
   );
 };

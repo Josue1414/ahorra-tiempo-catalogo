@@ -17,10 +17,10 @@ const slideProgressColors: Record<Product['id'], string> = {
 };
 
 const productTextColors: Record<Product['id'], string> = {
-  stockia: 'text-[#0e9f6e]',
-  citalis: 'text-[#2f9ec4]',
-  turnia: 'text-[#d97b29]',
-  mesa: 'text-[#8a5cd6]'
+  stockia: 'text-[#08784f]',
+  citalis: 'text-[#16769a]',
+  turnia: 'text-[#a84c00]',
+  mesa: 'text-[#6942ab]'
 };
 
 const revealDelays = ['delay-0', 'delay-75', 'delay-150', 'delay-[225ms]'];
@@ -144,12 +144,13 @@ export const Home = () => {
               <button
                 type="button"
                 key={slide.id}
+                aria-pressed={isActive}
                 onClick={() => handleCardClick(i)}
                 onMouseEnter={() => setActiveIndex(i)}
-                className={`cursor-pointer overflow-hidden rounded-2xl border text-left transition-all duration-300 ${
+                className={`cursor-pointer overflow-hidden rounded-2xl border bg-[rgba(14,38,62,0.72)] text-left text-white backdrop-blur-[10px] transition-all duration-300 ${
                   isActive
-                    ? 'border-transparent bg-[var(--cream)] text-[var(--ink)]'
-                    : 'border-white/10 bg-[rgba(14,38,62,0.46)] text-[var(--cream)] backdrop-blur-[10px]'
+                    ? 'border-white/40 shadow-lg shadow-black/20'
+                    : 'border-white/10 hover:border-white/25'
                 }`}
               >
                 <div className="h-14 overflow-hidden sm:h-[68px]">
@@ -171,7 +172,7 @@ export const Home = () => {
                   <div className="truncate font-[var(--font-heading)] text-sm font-semibold sm:text-base">
                     {slide.name}
                   </div>
-                  <div className={`truncate text-xs sm:text-[13px] ${isActive ? 'opacity-70' : 'opacity-70'}`}>
+                  <div className="truncate text-xs text-white/70 sm:text-[13px]">
                     {subtitle}
                   </div>
                 </div>
@@ -201,7 +202,7 @@ export const Home = () => {
           {products.map((product, i) => (
             <div
               key={product.id}
-              className={`reveal overflow-hidden rounded-3xl border border-white/20 bg-white/70 shadow-lg backdrop-blur-md transition-all duration-300 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/60 ${product.enabled ? 'cursor-pointer' : 'cursor-default'} ${revealDelays[i]}`}
+              className={`reveal overflow-hidden rounded-3xl border border-[#e7dfd2] bg-[#fffaf1] text-[var(--ink)] shadow-lg shadow-[#4a4030]/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#d8cbb8] hover:shadow-xl hover:shadow-[#4a4030]/15 ${product.enabled ? 'cursor-pointer' : 'cursor-default'} ${revealDelays[i]}`}
               onClick={() => product.enabled ? navigate(`/producto/${product.id}`) : addToast('Disponible próximamente', 'warn')}
               role="link"
               tabIndex={0}
@@ -232,17 +233,17 @@ export const Home = () => {
               </div>
               <div className="p-6">
                 <Badge text={product.badge} color={product.color} />
-                <h3 className="mt-4 text-3xl">{product.name}</h3>
-                <p className="mb-4 text-sm text-[var(--mut)]">{product.tag}</p>
+                <h3 className="mt-4 text-3xl text-[var(--ink)]">{product.name}</h3>
+                <p className="mb-4 text-sm text-[#596474]">{product.tag}</p>
                 <ul className="mb-6 flex flex-col gap-2">
                   {product.bullets.map((bullet, bulletIndex) => (
-                    <li key={bulletIndex} className="flex items-center gap-2 text-sm text-[var(--ink)]">
+                    <li key={bulletIndex} className="flex items-center gap-2 text-sm text-[#394351]">
                       <span className={productTextColors[product.id]}>{ic('check', 16)}</span>
                       {bullet}
                     </li>
                   ))}
                 </ul>
-                <div className="flex items-center justify-between border-t border-[var(--line)] pt-4">
+                <div className="flex items-center justify-between border-t border-[#e7dfd2] pt-4">
                   <span className={`text-sm font-semibold ${productTextColors[product.id]}`}>
                     {product.enabled ? 'Ver producto →' : 'Próximamente'}
                   </span>

@@ -1,6 +1,8 @@
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { ic } from '../../../../utils/icons';
+import { useAppContext } from '../../../../context/AppContext';
 import {
   getStockiaQuote,
   type SubscriptionDuration,
@@ -29,14 +31,23 @@ export default function FormularioSuscripcion({
   alCompletar,
   alCambiarPlan
 }: FormularioSuscripcionProps) {
+  const { loggedIn, user, registerWithPromotion } = useAppContext();
+  const navigate = useNavigate();
   const [planListOpen, setPlanListOpen] = useState(false);
   const [storesInfoOpen, setStoresInfoOpen] = useState(false);
+  const [hasPromoCode, setHasPromoCode] = useState(false);
+  const [promoCode, setPromoCode] = useState('');
+  const [promoDays, setPromoDays] = useState<number | null>(null);
   const [months, setMonths] = useState<SubscriptionDuration>(1);
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>('oxxo');
   const [showPin, setShowPin] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirmation, setShowPasswordConfirmation] = useState(false);
   const [formError, setFormError] = useState('');
+  const [registrationMessage, setRegistrationMessage] = useState('');
+  const [isRegistering, setIsRegistering] = useState(false);
+  const [registrationComplete, setRegistrationComplete] = useState(false);
+  const [emailConfirmationRequired, setEmailConfirmationRequired] = useState(false);
   const [form, setForm] = useState({
     email: '',
     emailConfirmation: '',
@@ -49,6 +60,15 @@ export default function FormularioSuscripcion({
 
   const quote = getStockiaQuote(plan, months);
 
+  useEffect(() => {
+    if (!loggedIn || !user?.email) return;
+    setForm(current => ({
+      ...current,
+      email: user.email,
+      emailConfirmation: user.email
+    }));
+  }, [loggedIn, user?.email]);
+
   const updateField = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.currentTarget;
     const normalizedValue = name === 'pin'
@@ -59,13 +79,14 @@ export default function FormularioSuscripcion({
 
     setForm(current => ({ ...current, [name]: normalizedValue }));
     setFormError('');
+    setRegistrationMessage('');
   };
 
-  const submitForm = (event: FormEvent<HTMLFormElement>) => {
+  const submitForm = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormError('');
 
-    if (form.email.trim().toLowerCase() !== form.emailConfirmation.trim().toLowerCase()) {
+    if (!loggedIn && form.email.trim().toLowerCase() !== form.emailConfirmation.trim().toLowerCase()) {
       setFormError('Los correos electrónicos no coinciden.');
       return;
     }
@@ -82,7 +103,49 @@ export default function FormularioSuscripcion({
       return;
     }
 
-    setForm(current => ({ ...current, pin: '', password: '', passwordConfirmation: '' }));
+    if (hasPromoCode) {
+      if (!promoCode.trim()) {
+        setFormError('Escribe tu código promocional.');
+        return;
+      }
+
+      setIsRegistering(true);
+      try {
+        const result = await registerWithPromotion({
+          email: form.email,
+          password: form.password,
+          fullName: form.username,
+          storeName: form.storeName,
+          pin: form.pin,
+          promoCode,
+          planCode: plan.code,
+          durationMonths: months
+        });
+
+        setRegistrationComplete(true);
+        setEmailConfirmationRequired(result.needsEmailConfirmation);
+        setPromoDays(result.promoDays);
+        setForm(current => ({ ...current, pin: '', password: '', passwordConfirmation: '' }));
+        setPromoCode('');
+        if (result.needsEmailConfirmation) {
+          setRegistrationMessage(`Cuenta creada. Confirma tu correo para activar la prueba gratuita${result.promoDays ? ` de ${result.promoDays} días` : ''}.`);
+        } else if (result.activationComplete) {
+          const trialDuration = result.promoDays
+            ? ` con ${result.promoDays} ${result.promoDays === 1 ? 'día gratuito' : 'días gratuitos'}`
+            : '';
+          setRegistrationMessage(`MiTienda quedó activa${trialDuration}. Al terminar el periodo, se solicitará un pago para continuar.`);
+        } else {
+          setRegistrationMessage(result.activationMessage ?? 'Tu cuenta se creó, pero la activación de MiTienda está pendiente. Inicia sesión de nuevo para reintentar.');
+          navigate('/cuenta', { replace: true });
+        }
+      } catch (error) {
+        setFormError(error instanceof Error ? error.message : 'No se pudo crear la cuenta. Verifica el código e intenta de nuevo.');
+      } finally {
+        setIsRegistering(false);
+      }
+      return;
+    }
+
     alCompletar(paymentMethod);
   };
 
@@ -133,9 +196,13 @@ export default function FormularioSuscripcion({
       </button>
 
       <div style={{ marginBottom: '24px' }}>
-        <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>Crear una tienda MiTienda</h3>
+        <h3 style={{ fontSize: '1.5rem', marginBottom: '8px' }}>
+          {hasPromoCode ? 'Activar prueba promocional de MiTienda' : 'Crear una tienda MiTienda'}
+        </h3>
         <p style={{ color: 'var(--mut)', fontSize: '14px' }}>
-          Completa los datos del dueño y del comercio. El correo puede tener varias tiendas.
+          {hasPromoCode
+            ? 'Si el código es válido, se creará tu cuenta y la tienda tendrá los días gratuitos asignados a esa promoción.'
+            : 'Completa los datos del dueño y del comercio. El correo puede tener varias tiendas.'}
         </p>
       </div>
 
@@ -228,11 +295,11 @@ export default function FormularioSuscripcion({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
             <div>
               <label htmlFor="subscription-email" style={labelStyle}>Correo electrónico</label>
-              <input id="subscription-email" type="email" name="email" autoComplete="email" required maxLength={254} value={form.email} onChange={updateField} style={inputStyle} placeholder="tu@correo.com" />
+              <input id="subscription-email" type="email" name="email" autoComplete="email" required maxLength={254} value={form.email} onChange={updateField} readOnly={loggedIn} style={inputStyle} placeholder="tu@correo.com" />
             </div>
             <div>
               <label htmlFor="subscription-email-confirmation" style={labelStyle}>Confirmar correo electrónico</label>
-              <input id="subscription-email-confirmation" type="email" name="emailConfirmation" autoComplete="email" required maxLength={254} value={form.emailConfirmation} onChange={updateField} style={inputStyle} placeholder="Repite tu correo" />
+              <input id="subscription-email-confirmation" type="email" name="emailConfirmation" autoComplete="email" required maxLength={254} value={form.emailConfirmation} onChange={updateField} readOnly={loggedIn} style={inputStyle} placeholder="Repite tu correo" />
             </div>
             <div>
               <label htmlFor="subscription-username" style={labelStyle}>Nombre de usuario / dueño</label>
@@ -278,7 +345,55 @@ export default function FormularioSuscripcion({
           </div>
         </section>
 
-        <section>
+        <section style={{ border: '1px solid var(--line)', borderRadius: '12px', padding: '16px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 600, cursor: 'pointer' }}>
+            <input
+              type="checkbox"
+              checked={hasPromoCode}
+              disabled={registrationComplete}
+              onChange={event => {
+                const checked = event.currentTarget.checked;
+                setHasPromoCode(checked);
+                setPromoCode('');
+                setPromoDays(null);
+                setFormError('');
+                setRegistrationMessage('');
+              }}
+            />
+            Tengo un código promocional
+          </label>
+          {hasPromoCode && (
+            <div style={{ marginTop: '14px' }}>
+              <label htmlFor="promo-code" style={labelStyle}>Código promocional</label>
+              <input
+                id="promo-code"
+                type="text"
+                autoComplete="one-time-code"
+                required
+                maxLength={64}
+                value={promoCode}
+                onChange={event => {
+                  setPromoCode(event.currentTarget.value.toUpperCase());
+                  setFormError('');
+                  setRegistrationMessage('');
+                }}
+                style={inputStyle}
+                placeholder="Escribe tu código promocional"
+              />
+              <p style={{ marginTop: '8px', color: 'var(--mut)', fontSize: '13px' }}>
+                El código es de un solo uso. Si es válido, se aplican los días gratuitos definidos para esta promoción y no se solicita pago ahora.
+              </p>
+            </div>
+          )}
+          {registrationMessage && <p role="status" style={{ marginTop: '12px', color: 'var(--ok)', fontSize: '14px' }}>{registrationMessage}</p>}
+          {emailConfirmationRequired && (
+            <Link to="/iniciar-sesion" style={{ display: 'inline-block', marginTop: '10px', color: 'var(--accent-d)', fontWeight: 600 }}>
+              Ir a iniciar sesión
+            </Link>
+          )}
+        </section>
+
+        {!hasPromoCode && <section>
           <h3 style={sectionHeadingStyle}>Forma de pago</h3>
           <fieldset style={{ border: 0, padding: 0, display: 'grid', gap: '12px' }}>
             <legend style={{ ...labelStyle, marginBottom: '12px' }}>Selecciona cómo pagarás</legend>
@@ -304,18 +419,25 @@ export default function FormularioSuscripcion({
               <span><strong>Tarjeta · un solo mes</strong><span style={{ display: 'block', color: 'var(--mut)', fontSize: '13px' }}>Pago único por un mes, sin renovación automática. La opción estará disponible al conectar la pasarela.</span></span>
             </label>
           </fieldset>
-        </section>
+        </section>}
 
         <section aria-label="Resumen de la contratación" style={{ border: '1px solid var(--line)', borderRadius: '12px', padding: '18px', background: 'rgba(255,255,255,0.55)' }}>
           <h3 style={{ ...sectionHeadingStyle, marginBottom: '12px' }}>Resumen</h3>
           <div style={{ display: 'grid', gap: '6px', fontSize: '14px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', gap: '16px' }}><span>Plan {plan.name} · {months} {months === 1 ? 'mes' : 'meses'}</span><span>{money(quote.subtotal)}</span></div>
             {quote.discount > 0 && <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--ok)' }}><span>Descuento del paquete</span><span>-{money(quote.discount)}</span></div>}
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--line)', paddingTop: '10px', marginTop: '4px', fontWeight: 700, fontSize: '18px' }}><span>Total a pagar</span><span>{money(quote.total)}</span></div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--line)', paddingTop: '10px', marginTop: '4px', fontWeight: 700, fontSize: '18px' }}>
+              <span>{hasPromoCode ? 'Pago inicial' : 'Total a pagar'}</span>
+              <span>{hasPromoCode ? money(0) : money(quote.total)}</span>
+            </div>
             <span style={{ color: 'var(--mut)' }}>
-              {paymentMethod === 'domiciliado'
-                ? `Renovación domiciliada cada ${months} ${months === 1 ? 'mes' : 'meses'}`
-                : paymentMethod === 'oxxo' ? 'Pago único en OXXO' : 'Pago único con tarjeta · un mes'}
+              {hasPromoCode
+                ? promoDays
+                  ? `Prueba gratuita por ${promoDays} ${promoDays === 1 ? 'día' : 'días'}; al vencer se solicitará pago para continuar.`
+                  : 'Los días gratuitos se mostrarán al validar el código promocional.'
+                : paymentMethod === 'domiciliado'
+                  ? `Renovación domiciliada cada ${months} ${months === 1 ? 'mes' : 'meses'}`
+                  : paymentMethod === 'oxxo' ? 'Pago único en OXXO' : 'Pago único con tarjeta · un mes'}
             </span>
           </div>
         </section>
@@ -323,11 +445,17 @@ export default function FormularioSuscripcion({
         {formError && <p role="alert" style={{ color: '#b42318', fontSize: '14px' }}>{formError}</p>}
 
         <div role="note" style={{ borderRadius: '10px', padding: '14px', background: 'rgba(255,190,46,0.14)', color: 'var(--ink)', fontSize: '13px' }}>
-          La integración con Supabase y la pasarela de pago aún no está conectada. Al continuar solo validaremos el formulario en esta pantalla: no se creará una cuenta, no se cobrará y no se enviarán ni guardarán tus datos.
+          {hasPromoCode
+            ? 'La validación se realiza en el servidor. Un código válido crea la tienda con los días gratuitos asignados; cuando venza, la suscripción requerirá pago para continuar.'
+            : 'La pasarela de pago aún no está conectada. Continuar solo valida los datos; no crea una cuenta ni realiza un cobro.'}
         </div>
 
-        <button type="submit" style={{ width: '100%', background: 'var(--coal)', color: '#fff', padding: '14px', borderRadius: '8px', fontWeight: 600, fontSize: '16px' }}>
-          Validar datos y continuar
+        <button
+          type="submit"
+          disabled={isRegistering || registrationComplete}
+          style={{ width: '100%', background: 'var(--coal)', color: '#fff', padding: '14px', borderRadius: '8px', fontWeight: 600, fontSize: '16px', opacity: isRegistering || registrationComplete ? 0.65 : 1 }}
+        >
+          {isRegistering ? 'Activando tienda…' : registrationComplete ? 'Registro enviado' : hasPromoCode ? 'Validar código y activar prueba' : 'Validar datos y continuar'}
         </button>
       </form>
     </div>

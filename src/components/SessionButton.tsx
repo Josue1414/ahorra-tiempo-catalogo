@@ -5,11 +5,11 @@ import { Button } from './UI';
 import { ic } from '../utils/icons';
 
 export const SessionButton = () => {
-  const { loggedIn, user, login } = useAppContext();
+  const { loggedIn, user } = useAppContext();
   const navigate = useNavigate();
 
   if (!loggedIn) {
-    return <Button variant="ghost-dark" onClick={login}>{ic('users', 18)} Iniciar sesión</Button>;
+    return <Button variant="ghost-dark" onClick={() => navigate('/iniciar-sesion')}>{ic('users', 18)} Iniciar sesión</Button>;
   }
 
   return (

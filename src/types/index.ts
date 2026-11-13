@@ -13,10 +13,11 @@ export interface Product {
   desc: string;
   img: string;
   thumb: string;
+  heroImages?: string[];
   monthly: number;
   bullets: string[];
   // Nuevo formato para características detalladas con imagen
-  detailedFeats: { t: string; d: string; img: string }[];
+  detailedFeats: { t: string; d: string; img: string; images?: string[] }[];
   mock: { side: string[]; main: 'stock'|'cal'|'team'|'kds' };
   enabled: boolean;
 }

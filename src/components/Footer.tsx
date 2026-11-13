@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext';
 const products = [
   { id: 'stockia', name: 'MiTienda', available: true },
   { id: 'citalis', name: 'Citalis', available: false },
-  { id: 'turnia', name: 'Turnia', available: false },
+  { id: 'turnia', name: 'Asistencias', available: false },
   { id: 'mesa', name: 'Mesa', available: false }
 ];
 
