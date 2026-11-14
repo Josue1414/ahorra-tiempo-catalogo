@@ -125,7 +125,7 @@ export const Account = () => {
       </div>
 
       <section className="glass reveal rounded-2xl p-6 sm:p-8">
-        <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-5">
           <div className="flex items-center gap-4">
             <Badge text="MiTienda" color="#0e9f6e" />
             <div>
@@ -133,11 +133,37 @@ export const Account = () => {
               <p className="text-sm text-[var(--mut)]">Suscripciones y tiendas vinculadas a tu cuenta.</p>
             </div>
           </div>
-          {!isLoading && dashboard?.stores.length ? (
-            <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-900">
-              {dashboard.stores.length} {dashboard.stores.length === 1 ? 'tienda' : 'tiendas'}
-            </span>
-          ) : null}
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <a
+              href="https://mitienda.ahorratiempo.com.mx"
+              aria-label="Ir a MiTienda en mitienda.ahorratiempo.com.mx"
+              className="transition hover:brightness-110"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 16,
+                padding: '12px 20px',
+                borderRadius: 16,
+                background: 'var(--ok)',
+                color: '#fff',
+                boxShadow: '0 8px 18px rgba(11,122,80,.22)',
+                textDecoration: 'none'
+              }}
+            >
+              <span>
+                <span style={{ display: 'block', fontSize: 16, fontWeight: 700, lineHeight: 1.3 }}>Ir a MiTienda</span>
+                <span style={{ display: 'block', marginTop: 2, color: 'rgba(255,255,255,.85)', fontSize: 13, lineHeight: 1.3 }}>
+                  mitienda.ahorratiempo.com.mx
+                </span>
+              </span>
+              {ic('arrowR', 20)}
+            </a>
+            {!isLoading && dashboard?.stores.length ? (
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-900">
+                {dashboard.stores.length} {dashboard.stores.length === 1 ? 'tienda' : 'tiendas'}
+              </span>
+            ) : null}
+          </div>
         </div>
 
         {isLoading && <p role="status" className="py-5 text-sm text-[var(--mut)]">Cargando tus métricas…</p>}
